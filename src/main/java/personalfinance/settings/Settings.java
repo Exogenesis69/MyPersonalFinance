@@ -62,7 +62,7 @@ final public class Settings { //final класс, где содержатся н
         Locale.setDefault(new Locale("ru"));
     }
 
-    private static void save() { //сохраняет данные в ini.file с новыми настройкамми
+    private static void save() { //сохраняет данные в ini.file с новыми настройками
 
         try {
             Wini ini = new Wini(FILE_SETTINGS); // чтобы записать данные
