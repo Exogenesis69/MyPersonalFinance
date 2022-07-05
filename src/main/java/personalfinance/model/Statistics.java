@@ -13,7 +13,7 @@ public class Statistics { //класс для возврата статисти�
         double amount = 0;
         for (Account account : ad.getAccounts()) { // для всех счетов
             if (currency.equals(account.getCurrency()))
-                amount += account.getAmount(); //при условии что валюта счета совпадает с передаваемой валютой
+                amount += account.getAmount(); //при условии, что валюта счета совпадает с передаваемой валютой
         }
         return amount;
     }

@@ -52,7 +52,7 @@ final public class Settings { //final класс, где содержатся н
     }
 
     public static void setFileSave(File file) {
-        FILE_SAVE = file;
+        Settings.FILE_SAVE = file;
         save();
     }
 

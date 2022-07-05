@@ -9,7 +9,7 @@ import personalfinance.settings.Settings;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class SaveLoad { // класс отвечает за механизм сохранения и загрузки
+public class SaveLoad { // класс отвечает за механизм сохранения и загрузки данных
 
     public static void load(SaveData sd) {//загрузка
         try {

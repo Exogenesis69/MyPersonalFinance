@@ -32,6 +32,7 @@ public class PersonalFinance {
     private static void init() { //вызываем метод инициализации из класса Text и подключаем шрифт
         try {
         Settings.init();
+        //Settings.save();
         Text.init();
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, Settings.FONT_GOTHAMPRO));
