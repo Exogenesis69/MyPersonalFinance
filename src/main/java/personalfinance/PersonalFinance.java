@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 public class PersonalFinance {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         init();
         MainFrame frame = new MainFrame();
         frame.setVisible(true);
