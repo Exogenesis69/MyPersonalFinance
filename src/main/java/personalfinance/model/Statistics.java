@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Statistics { //класс для возврата статистических данных
 
-    public double getBalanceCurrency(Currency currency) { //возвращает сумму со всех счетов с привязкой к валюте
+    public static double getBalanceCurrency(Currency currency) { //возвращает сумму со всех счетов с привязкой к валюте
         SaveData ad = SaveData.getInstance(); // получаем экземпляр класса
         double amount = 0;
         for (Account account : ad.getAccounts()) { // для всех счетов
@@ -28,15 +28,15 @@ public class Statistics { //класс для возврата статисти�
         return amount;
     }
 
-    public static HashMap<String, Double> getDataForChartOnIncomeArticles() { //метод возвращает  все статьи доходов
+    public static HashMap<String, Double> getDataForChartOnIncomeArticles() { //метод возвращает все статьи доходов
         return getDataForChartOnArticles(true); // значение true для доходов
     }
 
-    public static HashMap<String, Double> getDataForChartOnExpArticles() { //метод возвращает  все статьи доходов
+    public static HashMap<String, Double> getDataForChartOnExpArticles() { //метод возвращает все статьи доходов
         return getDataForChartOnArticles(false); //значение false для расходов
     }
 
-    private static HashMap<String, Double> getDataForChartOnArticles(boolean income) { //данные для постороения гистограммы
+    private static HashMap<String, Double> getDataForChartOnArticles(boolean income) { //данные для построения гистограммы
         List<Transaction> transactions = SaveData.getInstance().getTransactions(); // берем все транзакции
         HashMap <String, Double> data = new HashMap<>();
         for (Transaction t : transactions){
@@ -44,7 +44,7 @@ public class Statistics { //класс для возврата статисти�
                 String key = t.getArticle().getTitle(); // переменная, чтобы избежать дублирования кода
                 double summa = 0;
                 double amount = t.getAmount();
-                if (!income) amount *= -1; // если расходы, то умножаем на -1 чтобы небыло отрицательных значений
+                if (!income) amount *= -1; // если расходы, то умножаем на -1 чтобы не было отрицательных значений
                 if (data.containsKey(key)) summa = data.get(key);
                 summa += amount * t.getAccount().getCurrency().getRateByCurrency(SaveData.getInstance().getBaseCurrency());
                 data.put(key, round(summa)); //кладем значение в массив. round()- это метод для округления числа
@@ -57,4 +57,4 @@ public class Statistics { //класс для возврата статисти�
 
     }
 }
-// Lesson_2_6
+// Lesson_2_6,

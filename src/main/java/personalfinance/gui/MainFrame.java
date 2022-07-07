@@ -5,6 +5,7 @@ import personalfinance.gui.dialog.CurrencyAddEditDialog;
 import personalfinance.gui.dialog.TransactionAddEditDialog;
 import personalfinance.gui.dialog.TransferAddEditDialog;
 import personalfinance.gui.menu.MainMenu;
+import personalfinance.gui.panel.LeftPanel;
 import personalfinance.gui.toolbar.MainToolBar;
 import personalfinance.model.Transfer;
 import personalfinance.settings.Style;
@@ -17,6 +18,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
 
     private final GridBagConstraints constraints;
     private final MainMenu mb;//инициализируем меню
+    private final LeftPanel leftPanel;//инициализируем левую панель
     private final MainToolBar tb;//инициализируем тулбар
 
     public MainFrame() {
@@ -53,7 +55,8 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
 
         //add(new FunctionsToolBar(), constraints);
 
-        // add leftpanel
+        leftPanel = new LeftPanel(this);//инициализируем левую панель
+        add(leftPanel,constraints);//добавляем левую панель
 
 
         pack();
@@ -64,6 +67,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this); //обновляем фрейм, чтобы он перерисовался заново
         mb.refresh();
+        leftPanel.refresh();
         pack();
     }
-}//4_1,4_2,4_3,4_5
+}//4_1,4_2,4_3,4_5,6_1

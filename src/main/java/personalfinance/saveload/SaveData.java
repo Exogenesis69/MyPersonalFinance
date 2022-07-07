@@ -30,6 +30,9 @@ public final class SaveData { // final класс для создания объ
     public void load() {//создаем отдельный метод load() с дополнительными фишками(сортировка)
         SaveLoad.load(this);
         sort();
+        for (Account a : accounts){
+            a.setAmountFromTransactionsAndTransfers(transactions,transfers);
+        }
     }
 
     private void sort() { // создаем метод сортировки для каждого из элементов
@@ -211,4 +214,4 @@ public final class SaveData { // final класс для создания объ
     }
 
 
-}//2.6,3_2,3_3, 3_5
+}//2.6,3_2,3_3, 3_5,6_1

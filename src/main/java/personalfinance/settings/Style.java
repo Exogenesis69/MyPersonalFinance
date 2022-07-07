@@ -1,22 +1,28 @@
 package personalfinance.settings;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 final public class Style { //final класс: не будем создавать от него дочерние классы. Класс содержит стилевые настройки
 
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240,240,240); //цвет для фона кнопки(серый) в нормальном состоянии
-    //public static final Color COLOR_BUTTON_BG_HOVER = Color.YELLOW;//цвет для фона кнопки в нажатом состоянии (желтый)
+    public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
     public static final Color COLOR_BUTTON_BG_HOVER = new Color(255,168,18);//цвет для фона кнопки в нажатом состоянии (желтый)
+
 
     public static final Font FONT_BUTTON_TOOLBAR = new Font("GothamPro", Font.BOLD, 14); //настройка шрифта для кнопок в тулбаре: наименование, жирный, размер
     public static final Font FONT_MAIN_BUTTON = new Font("GothamPro", Font.BOLD, 14);
     public static final Font FONT_DIALOG_LABEL = new Font("GothamPro", Font.BOLD, 12);
+    public static final Font FONT_LABEL_HEADER = new Font("GothamPro", Font.BOLD, 16);
+    public static final Font FONT_LABEL_LEFT_PANEL_CURRENCY = new Font("GothamPro", Font.BOLD, 14);
+    public static final Font FONT_LABEL_LEFT_PANEL_AMOUNT = new Font("GothamPro", Font.PLAIN, 14);
+
+
 
 
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10); //настройка отступов для панелей с помощью класса EmptyBorder (рамка которую не видно)
+    public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(10, 10, 10, 10);
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5,5,5,5);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10, 10, 10, 10);
@@ -24,9 +30,13 @@ final public class Style { //final класс: не будем создават�
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200,25);
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10,0);
+    public static final Dimension DIMENSION_PADDING_BALANCE = new Dimension(10,0);
 
 
     public static final int PADDING_DIALOG = 10;
+    public static final int PADDING_BALANCE = 3;
+    public static final int PADDING_PANEL_BIG = 20;
+
 
 
     public static final ImageIcon ICON_MENU_FILE = new ImageIcon("images/menu_file.png");
@@ -88,6 +98,10 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_ON = new ImageIcon("images/on.png");
     public static final ImageIcon ICON_BASE = new ImageIcon("images/base.png");
 
+    public static final ImageIcon ICON_LEFT_PANEL_BALANCE_CURRENCIES = new ImageIcon("images/balance_currencies.png");
+    public static final ImageIcon ICON_LEFT_PANEL_BALANCE = new ImageIcon("images/balance.png");
 
 
-}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5
+
+
+}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1

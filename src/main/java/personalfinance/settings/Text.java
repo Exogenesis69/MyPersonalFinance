@@ -125,6 +125,9 @@ final public class Text { // класс с текстовыми констант
         data.put("LABEL_ON","Включено:");
         data.put("LABEL_BASE","Базовая:");
 
+        data.put("BALANCE_CURRENCIES","Баланс по валютам");
+        data.put("BALANCE","Итоговый баланс");
+
         data.put("FC_HOME", "Домашняя директория");
         data.put("FC_OPEN", "Открыть");
         data.put("FC_SAVE", "Сохранить");
@@ -158,4 +161,4 @@ final public class Text { // класс с текстовыми констант
 
 
 
-} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3
+} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1
