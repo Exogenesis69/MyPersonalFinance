@@ -9,7 +9,8 @@ final public class Style { //final класс: не будем создават�
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240,240,240); //цвет для фона кнопки(серый) в нормальном состоянии
     public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
     public static final Color COLOR_BUTTON_BG_HOVER = new Color(255,168,18);//цвет для фона кнопки в нажатом состоянии (желтый)
-
+    public static final Color COLOR_INCOME = new Color(0,100,0);;
+    public static final Color COLOR_EXP = new Color(200,0,0);;
 
     public static final Font FONT_BUTTON_TOOLBAR = new Font("GothamPro", Font.BOLD, 14); //настройка шрифта для кнопок в тулбаре: наименование, жирный, размер
     public static final Font FONT_MAIN_BUTTON = new Font("GothamPro", Font.BOLD, 14);
@@ -17,6 +18,9 @@ final public class Style { //final класс: не будем создават�
     public static final Font FONT_LABEL_HEADER = new Font("GothamPro", Font.BOLD, 16);
     public static final Font FONT_LABEL_LEFT_PANEL_CURRENCY = new Font("GothamPro", Font.BOLD, 14);
     public static final Font FONT_LABEL_LEFT_PANEL_AMOUNT = new Font("GothamPro", Font.PLAIN, 14);
+    public static final Font FONT_TABLE = new Font("GothamPro", Font.PLAIN, 14);
+    public static final Font FONT_TABLE_HEADER = new Font("GothamPro", Font.BOLD, 16);
+
 
 
 
@@ -31,11 +35,15 @@ final public class Style { //final класс: не будем создават�
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200,25);
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10,0);
     public static final Dimension DIMENSION_PADDING_BALANCE = new Dimension(10,0);
+    public static final Dimension DIMENSION_TABLE_SHOW_SIZE = new Dimension(850,450);
 
 
     public static final int PADDING_DIALOG = 10;
     public static final int PADDING_BALANCE = 3;
+    public static final int PADDING_PANEL = 3;
     public static final int PADDING_PANEL_BIG = 20;
+    public static final int PADDING_PANEL_EMPTY = 5;
+    public static final int TABLE_ADD_ROW_HEIGHT = 18;
 
 
 
@@ -102,6 +110,6 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_LEFT_PANEL_BALANCE = new ImageIcon("images/balance.png");
 
 
-
-
-}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1
+    public static final ImageIcon ICON_PANEL_OVERVIEW = new ImageIcon("images/overview_panel.png");
+    public static final ImageIcon ICON_PANEL_TRANSACTIONS = new ImageIcon("images/transactions_panel.png");
+}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5

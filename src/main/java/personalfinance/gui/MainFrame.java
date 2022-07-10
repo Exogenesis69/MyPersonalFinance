@@ -6,6 +6,8 @@ import personalfinance.gui.dialog.TransactionAddEditDialog;
 import personalfinance.gui.dialog.TransferAddEditDialog;
 import personalfinance.gui.menu.MainMenu;
 import personalfinance.gui.panel.LeftPanel;
+import personalfinance.gui.panel.OverviewPanel;
+import personalfinance.gui.panel.RightPanel;
 import personalfinance.gui.toolbar.MainToolBar;
 import personalfinance.model.Transfer;
 import personalfinance.settings.Style;
@@ -19,6 +21,8 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
     private final GridBagConstraints constraints;
     private final MainMenu mb;//инициализируем меню
     private final LeftPanel leftPanel;//инициализируем левую панель
+
+    private RightPanel rightPanel;//инициализируем правую панель
     private final MainToolBar tb;//инициализируем тулбар
 
     public MainFrame() {
@@ -58,10 +62,13 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
+        setRightPanel(new OverviewPanel(this));//Добавляем правую панель
+
 
         pack();
         setLocationRelativeTo(null); // окно программы будет появляться по центру
     }
+
 
     @Override
     public void refresh() {
@@ -70,4 +77,18 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel.refresh();
         pack();
     }
-}//4_1,4_2,4_3,4_5,6_1
+
+    public MainMenu getMenu() {
+        return mb;
+    }
+
+    private void setRightPanel(RightPanel panel) {
+        if (rightPanel != null) remove(rightPanel);// удаляем старую панель чтобы не произошло накладки
+        constraints.gridy = 1;//
+        constraints.gridx = 1;
+        rightPanel = panel;
+        panel.setBorder(Style.BORDER_PANEL);
+        add(rightPanel,constraints);
+        pack();
+    }
+}//4_1,4_2,4_3,4_5,6_1,6_2,6_5
