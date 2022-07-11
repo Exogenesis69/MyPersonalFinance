@@ -151,6 +151,7 @@ final public class Text { // класс с текстовыми констант
         data.put("LAST_TRANSACTIONS", "Последние транзакции");
         data.put("ACCOUNTS", "Счета");
         data.put("ARTICLES", "Статьи");
+        data.put("TRANSACTIONS", "Транзакции");
 
         data.put("TITLE", "Название");
         data.put("DATE", "Дата");

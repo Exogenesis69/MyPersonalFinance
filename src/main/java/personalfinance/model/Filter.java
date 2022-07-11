@@ -20,6 +20,7 @@ public class Filter { //класс для реализации фильтра п
     }
     public Filter(int step) {
         this.step = step;
+        setFromTo(new GregorianCalendar());
     }
 
     public int getStep() {
@@ -114,4 +115,4 @@ public class Filter { //класс для реализации фильтра п
         setFromTo(calendar);
     }
 
-}//2.5
+}//2.5,6_8
