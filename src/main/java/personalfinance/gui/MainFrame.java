@@ -5,10 +5,7 @@ import personalfinance.gui.dialog.CurrencyAddEditDialog;
 import personalfinance.gui.dialog.TransactionAddEditDialog;
 import personalfinance.gui.dialog.TransferAddEditDialog;
 import personalfinance.gui.menu.MainMenu;
-import personalfinance.gui.panel.AccountPanel;
-import personalfinance.gui.panel.LeftPanel;
-import personalfinance.gui.panel.OverviewPanel;
-import personalfinance.gui.panel.RightPanel;
+import personalfinance.gui.panel.*;
 import personalfinance.gui.toolbar.MainToolBar;
 import personalfinance.model.Transfer;
 import personalfinance.settings.Style;
@@ -63,7 +60,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new AccountPanel(this));//Добавляем правую панель
+        setRightPanel(new ArticletPanel(this));//Добавляем правую панель
 
 
         pack();
