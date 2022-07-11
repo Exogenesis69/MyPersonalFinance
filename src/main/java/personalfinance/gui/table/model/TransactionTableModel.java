@@ -18,13 +18,12 @@ public class TransactionTableModel  extends MainTableModel{//модель для
     private int count = - 1;//поле для переключения вывода(по умолчанию - по фильтру)
 
     public TransactionTableModel(String[] columns){
-        super(SaveData.getInstance().getFilterTransactions());//выводится по фильтру
+        super(SaveData.getInstance().getFilterTransactions(),columns);//выводится по фильтру
         this.columns = new ArrayList(Arrays.asList(columns));
     }
 
     public TransactionTableModel(String[] columns, int count) {
-        super(SaveData.getInstance().getTransactionsOnCount(count));//выводится по количеству
-        this.columns = new ArrayList(Arrays.asList(columns));
+        super(SaveData.getInstance().getTransactionsOnCount(count), columns);//выводится по количеству
         this.count = count;// поле
 
     }

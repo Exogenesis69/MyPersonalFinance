@@ -6,6 +6,7 @@ import personalfinance.settings.Text;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 abstract public class MainTableModel extends AbstractTableModel implements Refresh { //абстрактный класс для модели таблицы
@@ -13,8 +14,9 @@ abstract public class MainTableModel extends AbstractTableModel implements Refre
     protected List<? extends Common> data;//массив листов, с конструкцией "любой класс, который является дочерним для Common'а
     protected List<String> columns = new ArrayList();//массив заголовков таблиц
 
-    public MainTableModel(List data){//создаем конструктор, который принимает данные
+    public MainTableModel(List data, String[] columns){//создаем конструктор, который принимает данные
         this.data = data;
+        this.columns = new ArrayList(Arrays.asList(columns));
     }
 
 

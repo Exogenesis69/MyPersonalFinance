@@ -149,7 +149,9 @@ final public class Text { // класс с текстовыми констант
         data.put("FC_ALL_FILTER", "Все файлы");
 
         data.put("LAST_TRANSACTIONS", "Последние транзакции");
+        data.put("ACCOUNTS", "Счета");
 
+        data.put("TITLE", "Название");
         data.put("DATE", "Дата");
         data.put("ARTICLE", "Статья");
         data.put("AMOUNT", "Сумма");
@@ -172,4 +174,4 @@ final public class Text { // класс с текстовыми констант
 
 
 
-} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5
+} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,
