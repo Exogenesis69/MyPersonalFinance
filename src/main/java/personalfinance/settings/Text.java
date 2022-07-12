@@ -152,13 +152,18 @@ final public class Text { // класс с текстовыми констант
         data.put("ACCOUNTS", "Счета");
         data.put("ARTICLES", "Статьи");
         data.put("TRANSACTIONS", "Транзакции");
+        data.put("TRANSFERS", "Переводы");
 
         data.put("TITLE", "Название");
         data.put("DATE", "Дата");
+        data.put("ACCOUNT", "Счет");
         data.put("ARTICLE", "Статья");
         data.put("AMOUNT", "Сумма");
         data.put("NOTICE", "Примечание");
-        data.put("ACCOUNT", "Счет");
+        data.put("FROM_ACCOUNT", "Откуда");
+        data.put("TO_ACCOUNT", "Куда");
+        data.put("FROM_AMOUNT", "Снято");
+        data.put("TO_AMOUNT", "Зачислено");
 
 
 
@@ -176,4 +181,4 @@ final public class Text { // класс с текстовыми констант
 
 
 
-} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,
+} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,6,9

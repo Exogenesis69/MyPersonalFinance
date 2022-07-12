@@ -10,15 +10,22 @@ import java.awt.*;
 
 public class TransactionTableData extends TableData {
 
-    private static String[] columns = new String[]{"DATE","ACCOUNT", "ARTICLE","AMOUNT","NOTICE"};
+    private static final String[] columns = new String[]{"DATE","ACCOUNT", "ARTICLE","AMOUNT","NOTICE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_DATE, Style.ICON_ACCOUNT, Style.ICON_ARTICLE, Style.ICON_AMOUNT, Style.ICON_NOTICE};
 
     public TransactionTableData() {
         super(new TransactionTableModel(columns), columns, icons);
         init();
     }
+
     public TransactionTableData(int count) {
         super(new TransactionTableModel(columns, count), columns, icons);
+        init();
+    }
+
+    @Override
+    public void refresh() {
+        super.refresh();
         init();
     }
 

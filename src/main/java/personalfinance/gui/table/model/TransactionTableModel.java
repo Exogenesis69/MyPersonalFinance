@@ -48,7 +48,7 @@ public class TransactionTableModel  extends MainTableModel{//модель для
             case ARTICLE:
                 return transaction.getArticle().getTitle();
             case AMOUNT:
-                return transaction.getAmount();
+                return Format.amount(transaction.getAmount(),transaction.getAccount().getCurrency());
             case NOTICE:
                 return transaction.getNotice();
         }
