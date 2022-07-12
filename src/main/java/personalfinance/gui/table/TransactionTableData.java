@@ -22,14 +22,8 @@ public class TransactionTableData extends TableData {
         super(new TransactionTableModel(columns, count), columns, icons);
         init();
     }
-
     @Override
-    public void refresh() {
-        super.refresh();
-        init();
-    }
-
-    private void init() {
+    protected final void init() {
         getColumn(Text.get("AMOUNT")).setCellRenderer(new TableCellAmountRenderer());//подключаем рендеринг к столбцу amount
 
     }

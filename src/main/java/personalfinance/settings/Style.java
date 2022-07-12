@@ -9,8 +9,12 @@ final public class Style { //final класс: не будем создават�
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240,240,240); //цвет для фона кнопки(серый) в нормальном состоянии
     public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
     public static final Color COLOR_BUTTON_BG_HOVER = new Color(255,168,18);//цвет для фона кнопки в нажатом состоянии (желтый)
-    public static final Color COLOR_INCOME = new Color(0,100,0);;
-    public static final Color COLOR_EXP = new Color(200,0,0);;
+    public static final Color COLOR_INCOME = new Color(0,100,0);
+    public static final Color COLOR_EXP = new Color(200,0,0);
+    public static final Color COLOR_ON = Color.black;
+    public static final Color COLOR_OFF = new Color(170,170,170);
+
+
 
     public static final Font FONT_BUTTON_TOOLBAR = new Font("GothamPro", Font.BOLD, 14); //настройка шрифта для кнопок в тулбаре: наименование, жирный, размер
     public static final Font FONT_MAIN_BUTTON = new Font("GothamPro", Font.BOLD, 14);
@@ -115,5 +119,6 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_PANEL_ACCOUNTS = new ImageIcon("images/accounts_panel.png");
     public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/articles_panel.png");
     public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");;
+    public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");;;
 
-}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9
+}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10

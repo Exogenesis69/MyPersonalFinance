@@ -60,7 +60,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new TransactionPanel(this));//Добавляем правую панель
+        setRightPanel(new CurrencyPanel(this));//Добавляем правую панель
 
 
         pack();
@@ -73,6 +73,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         SwingUtilities.updateComponentTreeUI(this); //обновляем фрейм, чтобы он перерисовался заново
         mb.refresh();
         leftPanel.refresh();
+        rightPanel.refresh();
         pack();
     }
 

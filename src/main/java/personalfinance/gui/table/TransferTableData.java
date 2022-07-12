@@ -20,12 +20,7 @@ public class TransferTableData extends TableData {
     }
 
     @Override
-    public void refresh() {
-        super.refresh();
-        init();
-    }
-
-    private void init() {
+    protected final void init() {
         getColumn(Text.get("FROM_AMOUNT")).setCellRenderer(new TableCellAmountRenderer(Style.COLOR_EXP));//подключаем рендеринг к столбцу amount
         getColumn(Text.get("TO_AMOUNT")).setCellRenderer(new TableCellAmountRenderer(Style.COLOR_INCOME));
     }
@@ -46,4 +41,4 @@ public class TransferTableData extends TableData {
             return renderer;
         }
     }
-}//6.9
+}//6_9,6_10
