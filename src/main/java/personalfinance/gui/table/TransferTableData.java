@@ -1,6 +1,5 @@
 package personalfinance.gui.table;
 
-import personalfinance.gui.table.model.TransactionTableModel;
 import personalfinance.gui.table.model.TransferTableModel;
 import personalfinance.gui.table.renderer.MainTableCellRenderer;
 import personalfinance.settings.Style;

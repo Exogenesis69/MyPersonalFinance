@@ -1,13 +1,11 @@
 package personalfinance.gui;
 
-import personalfinance.gui.dialog.AccountAddEditDialog;
+
 import personalfinance.gui.dialog.CurrencyAddEditDialog;
-import personalfinance.gui.dialog.TransactionAddEditDialog;
-import personalfinance.gui.dialog.TransferAddEditDialog;
 import personalfinance.gui.menu.MainMenu;
 import personalfinance.gui.panel.*;
 import personalfinance.gui.toolbar.MainToolBar;
-import personalfinance.model.Transfer;
+
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 

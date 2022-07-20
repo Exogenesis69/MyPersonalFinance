@@ -1,6 +1,7 @@
 package personalfinance.gui.table;
 
 import personalfinance.gui.Refresh;
+import personalfinance.gui.menu.TablePopupMenu;
 import personalfinance.gui.table.model.MainTableModel;
 import personalfinance.gui.table.renderer.MainTableCellRenderer;
 import personalfinance.gui.table.renderer.TableHeaderIconRenderer;
@@ -8,14 +9,17 @@ import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 
 import javax.swing.*;
+import java.awt.*;
 
 abstract public class TableData extends JTable implements Refresh {//класс отвечающий за демонстрацию модели
 
+    private final TablePopupMenu popup;
     private final ImageIcon[] icons;
     private final String[] columns;//массив с языковыми константами для столбцов
 
     public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
         super(model);
+        this.popup = new TablePopupMenu();
         this.columns = columns;
         this.icons = icons;
 
@@ -33,8 +37,15 @@ abstract public class TableData extends JTable implements Refresh {//класс 
 
         MainTableCellRenderer renderer = new MainTableCellRenderer();
         setDefaultRenderer(String.class,renderer);
+        setComponentPopupMenu(popup);
+    }
 
-
+    @Override
+    public JPopupMenu getComponentPopupMenu() {
+        Point p = getMousePosition();
+        int row = rowAtPoint(p);
+        if (p != null && row !=-1) setRowSelectionInterval(row,row);
+        return super.getComponentPopupMenu();
     }
 
     @Override
@@ -52,4 +63,4 @@ abstract public class TableData extends JTable implements Refresh {//класс 
 
     }
 
-}//6_2,6_4,6_10
+}//6_2,6_4,6_10,6_11

@@ -78,6 +78,9 @@ final public class Style { //final класс: не будем создават�
 
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_view_help.png");
 
+    public static final Icon ICON_MENU_POPUP_EDIT = new ImageIcon("images/menu_popup_edit.png");
+    public static final Icon ICON_MENU_POPUP_DELETE = new ImageIcon("images/menu_popup_delete.png");
+
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");//настройки для маленькой иконки в окне программы
     public static final ImageIcon ICON_TOOLBAR_OVERVIEW = new ImageIcon("images/overview.png");
@@ -118,7 +121,6 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_PANEL_TRANSACTIONS = new ImageIcon("images/transactions_panel.png");
     public static final ImageIcon ICON_PANEL_ACCOUNTS = new ImageIcon("images/accounts_panel.png");
     public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/articles_panel.png");
-    public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");;
-    public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");;;
-
+    public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");
+    public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
 }//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10
