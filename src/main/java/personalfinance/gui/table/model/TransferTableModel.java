@@ -8,7 +8,7 @@ import personalfinance.settings.Format;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class TransferTableModel extends MainTableModel{//модель для таблицы с транзакциями
+public class TransferTableModel extends MainTableModel{//модель для таблицы с переводами
 
 
     private static final int DATE = 0;//Константы, отвечающие за конкретные поля

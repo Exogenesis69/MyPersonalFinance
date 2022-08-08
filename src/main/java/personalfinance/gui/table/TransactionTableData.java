@@ -8,7 +8,7 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 import java.awt.*;
 
-public class TransactionTableData extends TableData {
+public class TransactionTableData extends TableData {//класс, отвечающий за демонстрацию модели транзакций
 
     private static final String[] columns = new String[]{"DATE","ACCOUNT", "ARTICLE","AMOUNT","NOTICE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_DATE, Style.ICON_ACCOUNT, Style.ICON_ARTICLE, Style.ICON_AMOUNT, Style.ICON_NOTICE};

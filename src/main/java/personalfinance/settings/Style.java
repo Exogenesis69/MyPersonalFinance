@@ -1,10 +1,11 @@
 package personalfinance.settings;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-final public class Style { //final класс: не будем создавать от него дочерние классы. Класс содержит стилевые настройки
+final public class Style { //Final класс: не будем создавать от него дочерние классы. Класс содержит стилевые настройки
 
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240,240,240); //цвет для фона кнопки(серый) в нормальном состоянии
     public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
@@ -24,6 +25,7 @@ final public class Style { //final класс: не будем создават�
     public static final Font FONT_LABEL_LEFT_PANEL_AMOUNT = new Font("GothamPro", Font.PLAIN, 14);
     public static final Font FONT_TABLE = new Font("GothamPro", Font.PLAIN, 14);
     public static final Font FONT_TABLE_HEADER = new Font("GothamPro", Font.BOLD, 16);
+    public static final Font FONT_BUTTON_FILTER = new Font("GothamPro", Font.BOLD, 14);
 
 
 
@@ -34,6 +36,7 @@ final public class Style { //final класс: не будем создават�
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5,5,5,5);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(0, 0, 7, 0);
 
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200,25);
@@ -48,6 +51,7 @@ final public class Style { //final класс: не будем создават�
     public static final int PADDING_PANEL_BIG = 20;
     public static final int PADDING_PANEL_EMPTY = 5;
     public static final int TABLE_ADD_ROW_HEIGHT = 18;
+    public static final int WIDTH_FILTER_BUTTON = 200;
 
 
 
@@ -116,6 +120,9 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_LEFT_PANEL_BALANCE_CURRENCIES = new ImageIcon("images/balance_currencies.png");
     public static final ImageIcon ICON_LEFT_PANEL_BALANCE = new ImageIcon("images/balance.png");
 
+    public static final ImageIcon ICON_LEFT = new ImageIcon("images/left.png");
+    public static final ImageIcon ICON_RIGHT = new ImageIcon("images/right.png");
+
 
     public static final ImageIcon ICON_PANEL_OVERVIEW = new ImageIcon("images/overview_panel.png");
     public static final ImageIcon ICON_PANEL_TRANSACTIONS = new ImageIcon("images/transactions_panel.png");
@@ -123,4 +130,5 @@ final public class Style { //final класс: не будем создават�
     public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/articles_panel.png");
     public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");
     public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
-}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10
+
+}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10,6_12

@@ -5,7 +5,7 @@ import personalfinance.gui.table.AccountTableData;
 import personalfinance.gui.toolbar.FunctionsToolBar;
 import personalfinance.settings.Style;
 
-public class AccountPanel extends RightPanel{
+public class AccountPanel extends RightPanel{//класс для вывода панели счетов
 
     public AccountPanel(MainFrame frame) {
         super(frame, new AccountTableData(), "ACCOUNTS", Style.ICON_PANEL_ACCOUNTS, new FunctionsToolBar());

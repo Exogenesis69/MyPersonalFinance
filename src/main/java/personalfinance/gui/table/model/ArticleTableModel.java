@@ -4,7 +4,7 @@ import personalfinance.model.Article;
 import personalfinance.saveload.SaveData;
 
 
-public class ArticleTableModel extends MainTableModel{//модель для таблицы со счетами
+public class ArticleTableModel extends MainTableModel{//модель для таблицы со статьями
 
 
     private static final int TITLE = 0;//Константы, отвечающие за конкретные поля

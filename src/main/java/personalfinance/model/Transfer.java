@@ -4,7 +4,6 @@ package personalfinance.model;
 import personalfinance.exception.ModelException;
 import personalfinance.saveload.SaveData;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class Transfer extends Common  { //класс для создания объекта перевода, наследуется от Common

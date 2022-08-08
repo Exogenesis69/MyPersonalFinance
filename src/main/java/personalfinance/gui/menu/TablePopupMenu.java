@@ -7,28 +7,28 @@ import personalfinance.settings.Text;
 
 import javax.swing.*;
 
-public class TablePopupMenu  extends JPopupMenu implements Refresh {
+public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс для создания всплывающего меню
 
     public TablePopupMenu() {
-        super();
-        init();
+        super();//вызываем родительский конструктор
+        init();//вызываем метод инициализации
     }
 
     @Override
     public void refresh() {
 
     }
-    private void init() {
-        JMenuItem editItem = new JMenuItem(Text.get("EDIT"));
+    private void init() {//метод инициализации
+        JMenuItem editItem = new JMenuItem(Text.get("EDIT"));//создаем пункты меню
         JMenuItem deleteItem = new JMenuItem(Text.get("DELETE"));
 
-        editItem.setActionCommand(HandlerCode.EDIT);
+        editItem.setActionCommand(HandlerCode.EDIT);//устанавливаем коды обработок
         deleteItem.setActionCommand(HandlerCode.DELETE);
 
-        editItem.setIcon(Style.ICON_MENU_POPUP_EDIT);
+        editItem.setIcon(Style.ICON_MENU_POPUP_EDIT);//добавляем иконки
         deleteItem.setIcon(Style.ICON_MENU_POPUP_DELETE);
 
-        add(editItem);
+        add(editItem);//добавляем в само меню
         add(deleteItem);
 
     }

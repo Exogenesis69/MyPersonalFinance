@@ -5,7 +5,7 @@ import personalfinance.settings.Style;
 
 import javax.swing.*;
 
-public class ArticleTableData extends TableData {
+public class ArticleTableData extends TableData {//класс, отвечающий за демонстрацию таблицы с использованием модели счетов
 
     private static final String[] columns = new String[]{"TITLE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_TITLE};

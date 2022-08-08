@@ -5,10 +5,13 @@ import personalfinance.gui.table.TransactionTableData;
 import personalfinance.gui.toolbar.FunctionsToolBar;
 import personalfinance.settings.Style;
 
-public class TransactionPanel extends RightPanel{
+import javax.swing.*;
+
+public class TransactionPanel extends RightPanel{//класс для вывода панели транзакций
 
     public TransactionPanel(MainFrame frame) {
-        super(frame, new TransactionTableData(), "TRANSACTIONS", Style.ICON_PANEL_TRANSACTIONS, new FunctionsToolBar());
+        super(frame, new TransactionTableData(), "TRANSACTIONS", Style.ICON_PANEL_TRANSACTIONS,
+                new JPanel[] {new FunctionsToolBar(), new FilterPanel(frame)});
     }
 
-}//6_8
+}//6_8,6_12

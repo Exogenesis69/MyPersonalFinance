@@ -24,7 +24,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
     public MainFrame() {
         super(Text.get("PROGRAM_NAME"));
 
-        new CurrencyAddEditDialog(this).showDialog();
+        //new CurrencyAddEditDialog(this).showDialog();
 
         setResizable(false); //Запрещаем пользователю менять размер окна, чтобы не плыла вся верстка
         setIconImage(Style.ICON_MAIN.getImage());//Заменяем иконку программы со стандартной
@@ -58,7 +58,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new CurrencyPanel(this));//Добавляем правую панель
+        setRightPanel(new TransactionPanel(this));//Добавляем правую панель
 
 
         pack();

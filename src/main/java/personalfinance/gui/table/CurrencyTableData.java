@@ -9,7 +9,7 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 import java.awt.*;
 
-public class CurrencyTableData extends TableData {
+public class CurrencyTableData extends TableData {//класс отвечающий за демонстрацию модели валют
 
     private static final String[] columns = new String[]{"TITLE","CODE","RATE","ON","BASE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_TITLE, Style.ICON_CODE, Style.ICON_RATE, Style.ICON_ON, Style.ICON_BASE};

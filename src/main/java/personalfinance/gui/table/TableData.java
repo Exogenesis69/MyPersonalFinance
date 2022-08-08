@@ -11,15 +11,15 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 import java.awt.*;
 
-abstract public class TableData extends JTable implements Refresh {//класс отвечающий за демонстрацию модели
+abstract public class TableData extends JTable implements Refresh {//абстрактный класс отвечающий за демонстрацию модели
 
-    private final TablePopupMenu popup;
+    private final TablePopupMenu popup;//поле для всплывающего меню
     private final ImageIcon[] icons;
     private final String[] columns;//массив с языковыми константами для столбцов
 
     public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
         super(model);
-        this.popup = new TablePopupMenu();
+        this.popup = new TablePopupMenu();//создаем всплывающее меню
         this.columns = columns;
         this.icons = icons;
 
@@ -37,7 +37,7 @@ abstract public class TableData extends JTable implements Refresh {//класс 
 
         MainTableCellRenderer renderer = new MainTableCellRenderer();
         setDefaultRenderer(String.class,renderer);
-        setComponentPopupMenu(popup);
+        setComponentPopupMenu(popup);//устанавливаем всплывающее меню
     }
 
     @Override

@@ -5,7 +5,7 @@ import personalfinance.saveload.SaveData;
 import personalfinance.settings.Format;
 
 
-public class CurrencyTableModel extends MainTableModel{//модель для таблицы со
+public class CurrencyTableModel extends MainTableModel{//модель для таблицы с валютами
 
 
     private static final int TITLE = 0;//Константы, отвечающие за конкретные поля
