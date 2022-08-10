@@ -43,6 +43,7 @@ final public class Style { //Final класс: не будем создават�
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10,0);
     public static final Dimension DIMENSION_PADDING_BALANCE = new Dimension(10,0);
     public static final Dimension DIMENSION_TABLE_SHOW_SIZE = new Dimension(850,450);
+    public static final Dimension DIMENSION_CHART = new Dimension(868,550);
 
 
     public static final int PADDING_DIALOG = 10;
@@ -131,4 +132,5 @@ final public class Style { //Final класс: не будем создават�
     public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");
     public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
 
-}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10,6_12
+
+}//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10,6_12,7_1

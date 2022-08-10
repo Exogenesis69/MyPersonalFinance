@@ -37,7 +37,7 @@ public class Statistics { //класс для возврата статисти�
     }
 
     private static HashMap<String, Double> getDataForChartOnArticles(boolean income) { //данные для построения гистограммы
-        List<Transaction> transactions = SaveData.getInstance().getTransactions(); // берем все транзакции
+        List<Transaction> transactions = SaveData.getInstance().getFilterTransactions(); // берем все транзакции
         HashMap <String, Double> data = new HashMap<>();
         for (Transaction t : transactions){
             if ((income && t.getAmount() > 0) || (!income && t.getAmount() < 0 )) { //делаем так, чтобы доходы и расходы не суммировались
@@ -57,4 +57,4 @@ public class Statistics { //класс для возврата статисти�
 
     }
 }
-// Lesson_2_6,
+// Lesson_2_6,7_1
