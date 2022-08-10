@@ -37,6 +37,10 @@ abstract public class RightPanel extends AbstractPanel {//абстрактный
         this(frame,td,title,icon,new JPanel[]{});//перегрузка конструктора с отсутствием каких-либо панелей
     }
 
+    protected void setPanels(JPanel[] panels) { //метод для изменения панелей
+        this.panels = panels;
+    }
+
     @Override
     public void refresh() {//переопределение метода refresh
         super.refresh();
@@ -96,4 +100,4 @@ abstract public class RightPanel extends AbstractPanel {//абстрактный
 
 
     }
-}//6.2
+}//6_2,7_2

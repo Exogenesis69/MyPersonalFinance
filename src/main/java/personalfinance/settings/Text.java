@@ -154,6 +154,7 @@ final public class Text { // класс с текстовыми констант
         data.put("TRANSACTIONS", "Транзакции");
         data.put("TRANSFERS", "Переводы");
         data.put("CURRENCIES", "Валюты");
+        data.put("STATISTICS", "Статистика");
 
         data.put("TITLE", "Название");
         data.put("DATE", "Дата");
@@ -170,6 +171,8 @@ final public class Text { // класс с текстовыми констант
         data.put("ON", "Включено");
         data.put("BASE", "Базовая");
 
+        data.put("CHART_INCOME","Доходы по статьям");
+        data.put("CHART_EXP","Расходы по статьям");
         data.put("CHART_NO_DATA","Нет данных за выбранный период!");
 
 
@@ -188,4 +191,4 @@ final public class Text { // класс с текстовыми констант
 
 
 
-} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,6,9,6_10,7_1
+} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,6,9,6_10,7_1,7_2,
