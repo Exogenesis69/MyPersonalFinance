@@ -19,6 +19,7 @@ public class StatisticsPanel extends RightPanel { //класс для вывод
         super(frame, null, "STATISTICS", Style.ICON_PANEL_STATISTICS,
                 new JPanel[]{//создаем массив
                    new FilterPanel(frame),//где доступен выбор периода
+                        new StatisticsTypePanel(frame, "CHART_INCOME"),
                         new Chart(Statistics.getDataForChartOnIncomeArticles(), "CHART_INCOME", SaveData.getInstance().getBaseCurrency().getCode()).getPanel()//график
                 });
     }
@@ -41,8 +42,9 @@ public class StatisticsPanel extends RightPanel { //класс для вывод
         }
         setPanels(new JPanel[]{//создаем массив
                 new FilterPanel(frame),//где доступен выбор периода
+                new StatisticsTypePanel(frame, title),
                 chart.getPanel()
         });
         super.refresh();//вызываем родительскую версию метода refresh
     }
-}//7_3
+}//7_2

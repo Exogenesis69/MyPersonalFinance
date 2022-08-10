@@ -36,7 +36,7 @@ final public class Style { //Final класс: не будем создават�
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5,5,5,5);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10, 10, 10, 10);
-    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(0, 0, 7, 0);
+    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(5, 0, 7, 0);
 
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200,25);
