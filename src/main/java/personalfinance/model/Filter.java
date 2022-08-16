@@ -15,7 +15,7 @@ public class Filter { //класс для реализации фильтра п
     private Date to; //дата по какой-то день
 
     public Filter() {
-        this(STEP_MONTH);
+        this(STEP_YEAR);
 
     }
     public Filter(int step) {

@@ -58,7 +58,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new StatisticsPanel(this));//Добавляем правую панель
+        setRightPanel(new TransactionPanel(this));//Добавляем правую панель
 
 
         pack();

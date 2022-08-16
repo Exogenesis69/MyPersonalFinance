@@ -61,6 +61,14 @@ public final class SaveData { // final класс для создания объ
         });
     }
 
+    public void clear() {//метод для отчистки данных полей
+        articles.clear();
+        currencies.clear();
+        accounts.clear();
+        transactions.clear();
+        transfers.clear();
+    }
+
     public void save() {
         SaveLoad.save(this);
         saved = true;
@@ -101,23 +109,23 @@ public final class SaveData { // final класс для создания объ
     }
 
     public void setArticles(List<Article> articles) {
-        this.articles = articles;
+        if (articles != null) this.articles = articles;
     }
 
     public void setCurrencies(List<Currency> currencies) {
-        this.currencies = currencies;
+        if (currencies != null) this.currencies = currencies;
     }
 
     public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
+        if (accounts != null) this.accounts = accounts;
     }
 
     public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
+        if (transactions != null) this.transactions = transactions;
     }
 
     public void setTransfers(List<Transfer> transfers) {
-        this.transfers = transfers;
+        if (transfers != null) this.transfers = transfers;
     }
 
     public Currency getBaseCurrency() { // создаем "общую"(базовую) валюту
@@ -202,6 +210,7 @@ public final class SaveData { // final класс для создания объ
             c.setRate(rates.get(c.getCode())); //и обновляем всю информацию по их курсу
         for (Account a : accounts)//обновляем курсы валют в счетах
             a.getCurrency().setRate(rates.get(a.getCurrency().getCode()));
+        saved = false;
     }
 
     private List getRef(Common c) { //метод, для получения ссылки на массив в зависимости от типа данного элемента
@@ -214,4 +223,4 @@ public final class SaveData { // final класс для создания объ
     }
 
 
-}//2.6,3_2,3_3, 3_5,6_1
+}//2_6,3_2,3_3,3_5,6_1,8_1

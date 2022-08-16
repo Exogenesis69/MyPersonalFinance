@@ -66,7 +66,7 @@ final public class Settings { //final класс, где содержатся н
 
         try {
             Wini ini = new Wini(FILE_SETTINGS); // чтобы записать данные
-            ini.put("Settings","FILE_SAVE", FILE_SAVE.getAbsolutePath().replace("\\","\\\\"));
+            if (FILE_SAVE != null) ini.put("Settings","FILE_SAVE", FILE_SAVE.getAbsolutePath().replace("\\","\\\\"));
             ini.store();
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
