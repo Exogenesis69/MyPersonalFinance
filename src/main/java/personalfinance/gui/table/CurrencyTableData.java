@@ -1,5 +1,6 @@
 package personalfinance.gui.table;
 
+import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.gui.table.model.CurrencyTableModel;
 import personalfinance.gui.table.renderer.MainTableCellRenderer;
 import personalfinance.model.Currency;
@@ -14,8 +15,8 @@ public class CurrencyTableData extends TableData {//класс отвечающ�
     private static final String[] columns = new String[]{"TITLE","CODE","RATE","ON","BASE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_TITLE, Style.ICON_CODE, Style.ICON_RATE, Style.ICON_ON, Style.ICON_BASE};
 
-    public CurrencyTableData() {
-        super(new CurrencyTableModel(columns), columns, icons);
+    public CurrencyTableData(FunctionsHandler handler) {
+        super(new CurrencyTableModel(columns), handler, columns, icons);
         init();
     }
     @Override
@@ -30,7 +31,7 @@ public class CurrencyTableData extends TableData {//класс отвечающ�
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             Component renderer = super.getTableCellRendererComponent(table,value,isSelected,hasFocus,row,column);
-            if (((Currency) ((CurrencyTableModel) table.getModel()).getObjectByRow(row)).isOn())
+            if (((Currency) ((CurrencyTableModel) table.getModel()).getCommonByRow(row)).isOn())
             renderer.setForeground(Style.COLOR_ON);
             else renderer.setForeground(Style.COLOR_OFF);
             return renderer;
@@ -38,4 +39,4 @@ public class CurrencyTableData extends TableData {//класс отвечающ�
     }
 
 
-}//6_10
+}//6_10,8_2

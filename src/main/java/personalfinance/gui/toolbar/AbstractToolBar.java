@@ -2,13 +2,16 @@ package personalfinance.gui.toolbar;
 
 import personalfinance.gui.MainButton;
 import personalfinance.gui.Refresh;
+import personalfinance.gui.handler.Handler;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 abstract public class AbstractToolBar extends JPanel implements Refresh {//абстрактный класс для  шаблона тулбаров
-    public AbstractToolBar(EmptyBorder border) {//в будущем будем подключать обработчик
+    private final Handler handler;
+    public AbstractToolBar(EmptyBorder border, Handler handler) {//в будущем будем подключать обработчик
        super();
+       this.handler = handler;
        setBorder(border);
 
     }
@@ -16,7 +19,7 @@ abstract public class AbstractToolBar extends JPanel implements Refresh {//аб�
     abstract protected void init();//абстрактный метод, который будет реализовываться в дочерних классах
 
     protected MainButton addButton(String title, ImageIcon icon, String action, boolean topIcon) {//реализация добавления кнопки на панель тулбара
-        MainButton button = new MainButton(title, icon, null, action);
+        MainButton button = new MainButton(title, icon, handler, action);
         if (topIcon) {//позиционируем текст и картинку если изображение сверху
             button.setHorizontalTextPosition(SwingConstants.CENTER);
             button.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -35,4 +38,4 @@ abstract public class AbstractToolBar extends JPanel implements Refresh {//аб�
         removeAll();
         init();
     }
-}//4_5,4_6
+}//4_5,4_6,8_2

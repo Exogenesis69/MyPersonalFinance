@@ -1,6 +1,7 @@
 package personalfinance.gui.table;
 
 import personalfinance.gui.Refresh;
+import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.gui.menu.TablePopupMenu;
 import personalfinance.gui.table.model.MainTableModel;
 import personalfinance.gui.table.renderer.MainTableCellRenderer;
@@ -10,6 +11,7 @@ import personalfinance.settings.Text;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 
 abstract public class TableData extends JTable implements Refresh {//абстрактный класс отвечающий за демонстрацию модели
 
@@ -17,7 +19,7 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
     private final ImageIcon[] icons;
     private final String[] columns;//массив с языковыми константами для столбцов
 
-    public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
+    public TableData(MainTableModel model, FunctionsHandler handler, String[] columns, ImageIcon[] icons) {
         super(model);
         this.popup = new TablePopupMenu();//создаем всплывающее меню
         this.columns = columns;
@@ -38,6 +40,9 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
         MainTableCellRenderer renderer = new MainTableCellRenderer();
         setDefaultRenderer(String.class,renderer);
         setComponentPopupMenu(popup);//устанавливаем всплывающее меню
+
+        addMouseListener(handler);//устанавливаем обработчики
+        addKeyListener(handler);
     }
 
     @Override
@@ -45,7 +50,8 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
         Point p = getMousePosition();
         if (p != null) {
             int row = rowAtPoint(p);
-            if (row != -1) setRowSelectionInterval(row,row);
+            if (isRowSelected(row)) setRowSelectionInterval(row,row);
+            else return null;
         }
         return super.getComponentPopupMenu();
     }
@@ -54,10 +60,13 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
     public void refresh() {
         int selectedRow = getSelectedRow();//получаем выделенную строку
         ((MainTableModel)getModel()).refresh();
-        /*for (int i = 0; i<columns.length; i++) {
+        for (int i = 0; i<columns.length; i++) {
             getColumn(Text.get(columns[i])).setHeaderRenderer(new TableHeaderIconRenderer(icons[i]));
-        }*/
-        if (selectedRow != -1 && selectedRow < getRowCount()) setRowSelectionInterval(selectedRow,selectedRow);
+        }
+        if (selectedRow != -1 && selectedRow < getRowCount()) {
+            setRowSelectionInterval(selectedRow,selectedRow);
+            requestFocus();//устанавливаем фокус
+        }
         init();
     }
 
@@ -65,4 +74,4 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
 
     }
 
-}//6_2,6_4,6_10,6_11,8_1
+}//6_2,6_4,6_10,6_11,8_1,8_2

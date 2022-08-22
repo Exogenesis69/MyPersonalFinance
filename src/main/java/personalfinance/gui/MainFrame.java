@@ -88,4 +88,8 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         add(rightPanel,constraints);
         pack();
     }
-}//4_1,4_2,4_3,4_5,6_1,6_2,6_5
+
+    public RightPanel getRightPanel() {
+        return rightPanel;
+    }
+}//4_1,4_2,4_3,4_5,6_1,6_2,6_5,8_2

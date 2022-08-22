@@ -50,11 +50,11 @@ abstract public class MainTableModel extends AbstractTableModel implements Refre
         fireTableDataChanged();
     }
 
-    public Object getObjectByRow(int row) {//создаем в родительском классе метод для получения объекта по строке
+    public Common getCommonByRow(int row) {//создаем в родительском классе метод для получения объекта типа Common по строке
         return data.get(row);
     }
 
    abstract protected void updateData();
 
 
-}//6_3,6_10
+}//6_3,6_10,8_2

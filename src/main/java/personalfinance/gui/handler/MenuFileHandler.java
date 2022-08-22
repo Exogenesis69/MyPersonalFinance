@@ -66,9 +66,7 @@ public class MenuFileHandler extends Handler{//класс, реализующи�
                    int result = ConfirmDialog.show(frame, "CONFIRM_EXIT_TEXT", "CONFIRM_EXIT_TITLE");//иначе выводим диалоговое окно с предупреждением
                    if (result == JOptionPane.YES_OPTION) System.exit(0);//Если пользователь не хочет сохранять данные, то закрываем программу
                 }
-                break;
             }
-
         }
         super.actionPerformed(ae);
     }

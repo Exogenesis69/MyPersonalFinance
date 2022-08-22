@@ -7,7 +7,7 @@ import personalfinance.settings.Text;
 public final class MainToolBar extends AbstractToolBar { //final класс для создания главного тулбара
 
     public MainToolBar() {
-        super(Style.BORDER_MAIN_TOOLBAR);//вызываем родительский конструктор и добавляем отступы с помощью пустой рамки
+        super(Style.BORDER_MAIN_TOOLBAR, null);//вызываем родительский конструктор и добавляем отступы с помощью пустой рамки
         init();
     }
 

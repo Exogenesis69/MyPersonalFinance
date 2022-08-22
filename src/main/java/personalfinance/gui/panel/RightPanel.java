@@ -97,7 +97,9 @@ abstract public class RightPanel extends AbstractPanel {//абстрактный
                 }
             });
         }
-
-
     }
-}//6_2,7_2
+
+    public TableData getTableData() {
+        return td;
+    }
+}//6_2,7_2,8_2
