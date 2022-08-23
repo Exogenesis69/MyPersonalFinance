@@ -4,6 +4,7 @@ import personalfinance.gui.EnableEditDelete;
 import personalfinance.gui.MainFrame;
 import personalfinance.gui.Refresh;
 import personalfinance.gui.handler.Handler;
+import personalfinance.gui.handler.MenuEditHandler;
 import personalfinance.gui.handler.MenuFileHandler;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
@@ -16,7 +17,7 @@ import java.awt.event.KeyEvent;
 public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //класс, для создания меню программы
     private JMenuItem menuEdit;
     private JMenuItem menuDelete;
-    private final MainFrame frame;// фрейм меню. Нужен, чтобы передать его обработчикам пунктов меню для обновления
+    private final MainFrame frame;//Фрейм меню. Нужен, чтобы передать его обработчикам пунктов меню для обновления
 
     public MainMenu(MainFrame frame) {
         super();
@@ -41,7 +42,7 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         add(help);
 
         MenuFileHandler fileHandler = new MenuFileHandler(frame);
-        MenuFileHandler editHandler = new MenuFileHandler(frame);
+        MenuEditHandler editHandler = new MenuEditHandler(frame);
         MenuFileHandler viewHandler = new MenuFileHandler(frame);
         MenuFileHandler helpHandler = new MenuFileHandler(frame);
 
@@ -102,4 +103,4 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
     }
 
 
-}//4_3,8_1
+}//4_3,8_1,8_3

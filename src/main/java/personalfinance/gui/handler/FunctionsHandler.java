@@ -77,15 +77,15 @@ public class FunctionsHandler extends Handler implements MouseListener, KeyListe
         frame.refresh();
     }
 
-    private void add() {
+    public void add() {
         showAddEditDialog(null);
     }
 
-    private void edit() {
+    public void edit() {
         showAddEditDialog(getSelectedCommon());
     }
 
-    private void delete() {
+    public void delete() {
         Common c = getSelectedCommon();
         if (c != null) {
             int result = ConfirmDialog.show(frame, "CONFIRM_DELETE_TEXT", "CONFIRM_DELETE_TITLE");
@@ -105,4 +105,4 @@ public class FunctionsHandler extends Handler implements MouseListener, KeyListe
         dialog.setCommon(c);//переносим объект типа Common в диалог
         dialog.showDialog();//показываем диалоговое окно
     }//данный класс определит добавление это или редактирование в зависимости от того null или нет
-}//8_2
+}//8_2,8_3

@@ -15,12 +15,15 @@ import java.awt.event.MouseListener;
 
 abstract public class TableData extends JTable implements Refresh {//абстрактный класс отвечающий за демонстрацию модели
 
+    private final FunctionsHandler handler;
     private final TablePopupMenu popup;//поле для всплывающего меню
     private final ImageIcon[] icons;
     private final String[] columns;//массив с языковыми константами для столбцов
 
+
     public TableData(MainTableModel model, FunctionsHandler handler, String[] columns, ImageIcon[] icons) {
         super(model);
+        this.handler = handler;
         this.popup = new TablePopupMenu();//создаем всплывающее меню
         this.columns = columns;
         this.icons = icons;
@@ -74,4 +77,7 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
 
     }
 
-}//6_2,6_4,6_10,6_11,8_1,8_2
+    public FunctionsHandler getFunctionsHandler() {
+        return handler;
+    }
+}//6_2,6_4,6_10,6_11,8_1,8_2,8_3
