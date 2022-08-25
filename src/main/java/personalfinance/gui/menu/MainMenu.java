@@ -6,6 +6,7 @@ import personalfinance.gui.Refresh;
 import personalfinance.gui.handler.Handler;
 import personalfinance.gui.handler.MenuEditHandler;
 import personalfinance.gui.handler.MenuFileHandler;
+import personalfinance.gui.handler.MenuViewHandler;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
@@ -43,7 +44,7 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
 
         MenuFileHandler fileHandler = new MenuFileHandler(frame);
         MenuEditHandler editHandler = new MenuEditHandler(frame);
-        MenuFileHandler viewHandler = new MenuFileHandler(frame);
+        MenuViewHandler viewHandler = new MenuViewHandler(frame);
         MenuFileHandler helpHandler = new MenuFileHandler(frame);
 
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_NEW"), Style.ICON_MENU_FILE_NEW, HandlerCode.MENU_FILE_NEW, KeyEvent.VK_N);//KeyEvent.VK_N - реализация горячей клавиши (ctrl + N)

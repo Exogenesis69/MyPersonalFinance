@@ -58,7 +58,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new TransactionPanel(this));//Добавляем правую панель
+        setRightPanel(new OverviewPanel(this));//Добавляем правую панель
 
 
         pack();
@@ -79,7 +79,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         return mb;
     }
 
-    private void setRightPanel(RightPanel panel) {
+    public void setRightPanel(RightPanel panel) {
         if (rightPanel != null) remove(rightPanel);// удаляем старую панель чтобы не произошло накладки
         constraints.gridy = 1;//
         constraints.gridx = 1;
@@ -92,4 +92,4 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
     public RightPanel getRightPanel() {
         return rightPanel;
     }
-}//4_1,4_2,4_3,4_5,6_1,6_2,6_5,8_2
+}//4_1,4_2,4_3,4_5,6_1,6_2,6_5,8_2,8_4
