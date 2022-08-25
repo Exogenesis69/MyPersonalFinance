@@ -1,13 +1,14 @@
 package personalfinance.gui.toolbar;
 
+import personalfinance.gui.handler.MainToolBarHandler;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 
 public final class MainToolBar extends AbstractToolBar { //final класс для создания главного тулбара
 
-    public MainToolBar() {
-        super(Style.BORDER_MAIN_TOOLBAR, null);//вызываем родительский конструктор и добавляем отступы с помощью пустой рамки
+    public MainToolBar(MainToolBarHandler handler) {
+        super(Style.BORDER_MAIN_TOOLBAR, handler);//вызываем родительский конструктор и добавляем отступы с помощью пустой рамки
         init();
     }
 
@@ -23,4 +24,4 @@ public final class MainToolBar extends AbstractToolBar { //final класс дл
     }
 
 
-}//4_5,4_6
+}//4_5,4_6,8_6

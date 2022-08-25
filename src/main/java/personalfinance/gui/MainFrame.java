@@ -1,7 +1,6 @@
 package personalfinance.gui;
 
-
-import personalfinance.gui.dialog.CurrencyAddEditDialog;
+import personalfinance.gui.handler.MainToolBarHandler;
 import personalfinance.gui.menu.MainMenu;
 import personalfinance.gui.panel.*;
 import personalfinance.gui.toolbar.MainToolBar;
@@ -12,7 +11,7 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame extends JFrame implements Refresh { //Класс, реализующий графический интерфейс главного окна, наследуется от JFrame
+public final class MainFrame extends JFrame implements Refresh { //Класс, реализующий графический интерфейс главного окна, наследуется от JFrame
 
     private final GridBagConstraints constraints;
     private final MainMenu mb;//инициализируем меню
@@ -42,7 +41,7 @@ public class MainFrame extends JFrame implements Refresh { //Класс, реа�
         constraints.gridy = 0;
         constraints.gridwidth = 2; //растянут на два столбца
 
-        tb = new MainToolBar();
+        tb = new MainToolBar(new MainToolBarHandler(this));
         add(tb, constraints);//создаем новый тулбар со значениями
 
 
