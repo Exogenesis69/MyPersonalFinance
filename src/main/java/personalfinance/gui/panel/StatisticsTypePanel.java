@@ -2,6 +2,7 @@ package personalfinance.gui.panel;
 
 import personalfinance.gui.MainButton;
 import personalfinance.gui.MainFrame;
+import personalfinance.gui.handler.ChartHandler;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Text;
 
@@ -17,9 +18,9 @@ public final class StatisticsTypePanel extends AbstractPanel{//класс для
 
     @Override
     protected void init() {
-        MainButton type = new MainButton(title, null, HandlerCode.TYPE);
+        MainButton type = new MainButton(title, new ChartHandler(frame), HandlerCode.TYPE);
         add(type);
 
 
     }
-}//7_3
+}//7_3,8_8

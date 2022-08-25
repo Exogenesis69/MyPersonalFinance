@@ -14,7 +14,7 @@ public class FilterHandler extends Handler{//класс, реализующий 
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {//метод присвоения действий при нажатии на кнопку меню фильтра по дате
+    public void actionPerformed(ActionEvent ae) {//метод присвоения действий при нажатии на кнопку фильтра по дате
         switch (ae.getActionCommand()) {//перечисляем константы кодов-обработчиков
             case HandlerCode.LEFT: {// действия при варианте нажатия на кнопку "Лево"
                 SaveData.getInstance().getFilter().prev();//получаем доступ к фильтру и вызываем метод prev(предыдущий временной интервал)
