@@ -1,6 +1,7 @@
 package personalfinance.gui.menu;
 
 import personalfinance.gui.Refresh;
+import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
@@ -8,9 +9,11 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 
 public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс для создания всплывающего меню
+    private final FunctionsHandler handler;
 
-    public TablePopupMenu() {
+    public TablePopupMenu(FunctionsHandler handler) {
         super();//вызываем родительский конструктор
+        this.handler = handler;
         init();//вызываем метод инициализации
     }
 
@@ -25,6 +28,9 @@ public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс
         editItem.setActionCommand(HandlerCode.EDIT);//устанавливаем коды обработок
         deleteItem.setActionCommand(HandlerCode.DELETE);
 
+        editItem.addActionListener(handler);//добавляем лисенер к этим элементам
+        deleteItem.addActionListener(handler);
+
         editItem.setIcon(Style.ICON_MENU_POPUP_EDIT);//добавляем иконки
         deleteItem.setIcon(Style.ICON_MENU_POPUP_DELETE);
 
@@ -32,4 +38,4 @@ public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс
         add(deleteItem);
 
     }
-}//6_11
+}//6_11,8_10

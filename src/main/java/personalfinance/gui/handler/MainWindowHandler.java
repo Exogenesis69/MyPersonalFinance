@@ -18,5 +18,4 @@ public class MainWindowHandler extends WindowAdapter {//класс, реализ
             if (result == JOptionPane.YES_OPTION) System.exit(0);//Если пользователь не хочет сохранять данные, то закрываем программу
         }
     }
-
 }//8_9

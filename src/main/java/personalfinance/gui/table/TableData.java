@@ -24,7 +24,7 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
     public TableData(MainTableModel model, FunctionsHandler handler, String[] columns, ImageIcon[] icons) {
         super(model);
         this.handler = handler;
-        this.popup = new TablePopupMenu();//создаем всплывающее меню
+        this.popup = new TablePopupMenu(handler);//создаем всплывающее меню и передаем обработчик
         this.columns = columns;
         this.icons = icons;
 
@@ -80,4 +80,4 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
     public FunctionsHandler getFunctionsHandler() {
         return handler;
     }
-}//6_2,6_4,6_10,6_11,8_1,8_2,8_3
+}//6_2,6_4,6_10,6_11,8_1,8_2,8_3,8_10
