@@ -3,10 +3,7 @@ package personalfinance.gui.menu;
 import personalfinance.gui.EnableEditDelete;
 import personalfinance.gui.MainFrame;
 import personalfinance.gui.Refresh;
-import personalfinance.gui.handler.Handler;
-import personalfinance.gui.handler.MenuEditHandler;
-import personalfinance.gui.handler.MenuFileHandler;
-import personalfinance.gui.handler.MenuViewHandler;
+import personalfinance.gui.handler.*;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
@@ -42,10 +39,10 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         add(view);
         add(help);
 
-        MenuFileHandler fileHandler = new MenuFileHandler(frame);
+        MenuFileHandler fileHandler = new MenuFileHandler(frame);//Подключаем кнопки
         MenuEditHandler editHandler = new MenuEditHandler(frame);
         MenuViewHandler viewHandler = new MenuViewHandler(frame);
-        MenuFileHandler helpHandler = new MenuFileHandler(frame);
+        MenuHelpHandler helpHandler = new MenuHelpHandler(frame);
 
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_NEW"), Style.ICON_MENU_FILE_NEW, HandlerCode.MENU_FILE_NEW, KeyEvent.VK_N);//KeyEvent.VK_N - реализация горячей клавиши (ctrl + N)
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_OPEN"), Style.ICON_MENU_FILE_OPEN, HandlerCode.MENU_FILE_OPEN, KeyEvent.VK_O);
@@ -103,5 +100,4 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         menuDelete.setEnabled(enable);
     }
 
-
-}//4_3,8_1,8_3
+}//4_3,8_1,8_3,8_4,8_5
