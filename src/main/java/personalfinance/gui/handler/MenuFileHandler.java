@@ -56,7 +56,7 @@ public class MenuFileHandler extends Handler{//класс, реализующи�
                 try {
                     SaveData.getInstance().updateCurrencies();
                 } catch (Exception e) {
-                    ErrorDialog.show(frame, Text.get("ERROR_UPDATE_CURRENCIES"));
+                    ErrorDialog.show(frame, "ERROR_UPDATE_CURRENCIES");
                 }
                 break;
             }

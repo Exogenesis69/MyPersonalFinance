@@ -6,6 +6,7 @@ import org.jdatepicker.impl.UtilDateModel;
 import personalfinance.exception.ModelException;
 import personalfinance.gui.MainButton;
 import personalfinance.gui.MainFrame;
+import personalfinance.gui.handler.AddEditDialogHandler;
 import personalfinance.model.Common;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Style;
@@ -19,6 +20,7 @@ import java.util.Map;
 
 abstract public class AddEditDialog extends JDialog {//Абстрактный класс-шаблон, реализующий окно редактирования/добавления данных и являющийся основой для других окон
 
+    private final MainFrame frame;
     protected LinkedHashMap<String,JComponent> components = new LinkedHashMap();//создаем массив, отвечающие за компоненты HashMap, где ключ-String text, значение-объект JComponent(текстовое поле, выпадающий список, чек-бокс и т.д.)
     protected LinkedHashMap<String,ImageIcon> icons = new LinkedHashMap();//массив иконок
     protected LinkedHashMap<String,Object> values = new LinkedHashMap();// массив объектов
@@ -26,6 +28,8 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
 
     public AddEditDialog(MainFrame frame){
         super(frame, Text.get("ADD"),true);//обращаемся к родительскому классу и передаем форму добавления и делам окно модальным(пока не закроем данное окно, все остальные окна не будут активными)
+        this.frame = frame;
+        addWindowListener(new AddEditDialogHandler(frame, this));
         setResizable(false);//запрещаем редактировать размер окна
 
     }
@@ -57,11 +61,11 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
         return c ==null;// если объект == null, то это операция добавления, если нет, то редактирования
     }
 
+    abstract public Common getCommonFromForm() throws ModelException;//метод, возвращающий конкретный объект Common, на основании заполненной формы
+
     abstract protected void init();//Абстрактный методы, которые дочерние классы обязаны будут реализовать. Инициализация(заполняются components и icons)
 
     abstract protected void setValues();//Абстрактный метод, где заполняется values
-
-    abstract protected Common getCommonFromForm() throws ModelException;//метод, возвращающий конкретный объект Common, на основании заполненной формы
 
     private void setDialog() {//метод для создания интерфейса самого окна
         init(); //инициализируем окно и заполняем массивы
@@ -100,6 +104,7 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
             else if (component instanceof JDatePickerImpl) {//Если component унаследован от ДатаПикера
                 if (values.containsKey(key)) ((UtilDateModel)((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
+            component.addKeyListener(new AddEditDialogHandler(frame, this));//Добавляем горячую клавишу
             component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
             add(label);//Устанавливаем метку
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));//Добавляем отступы у метки
@@ -107,13 +112,13 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));//Добавляем отступы у компонента
         }
 
-        MainButton ok = new MainButton(Text.get("ADD"), Style.ICON_OK, null, HandlerCode.ADD);//Создаём копку добавить/изменить
+        MainButton ok = new MainButton(Text.get("ADD"), Style.ICON_OK, new AddEditDialogHandler(frame, this), HandlerCode.ADD);//Создаём копку добавить/изменить
         if(!isAdd()) {//Если это не "добавить", то делаем кнопку под "изменить"
             ok.setActionCommand(HandlerCode.EDIT);
             ok.setText(Text.get("EDIT"));
         }
 
-        MainButton cancel = new MainButton(Text.get("CANCEL"), Style.ICON_CANCEL,null,HandlerCode.CANCEL);//Создаём копку "отмена"
+        MainButton cancel = new MainButton(Text.get("CANCEL"), Style.ICON_CANCEL, new AddEditDialogHandler(frame, this), HandlerCode.CANCEL);//Создаём копку "отмена"
 
         JPanel panelButtons = new JPanel();//размещаем кнопки
         panelButtons.setLayout(new BorderLayout());
@@ -142,4 +147,4 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
         }
     }
 
-}//5_4,5_5
+}//5_4,5_5,8_11

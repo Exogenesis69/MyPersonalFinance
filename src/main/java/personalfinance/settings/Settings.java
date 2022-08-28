@@ -29,7 +29,7 @@ final public class Settings { //final класс, где содержатся н
 
     public static final int COUNT_OVERVIEW_ROWS = 10; //количество строк, которое будет показываться на главном экране
 
-    public static final String[] CURRENCIES_CODE = new String[]{"RUB", "USD", "EU", "BYN", "UAH"}; // код валют
+    public static final String[] CURRENCIES_CODE = new String[]{"RUB", "USD", "EUR", "BYN", "UAH"}; // код валют
 
 
     private static final File FILE_SETTINGS = new File("saves/settings.ini"); // путь, куда сохраняется файл настройки

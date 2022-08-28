@@ -15,7 +15,7 @@ public class Currency extends Common{ //класс, для создания об
 
     public Currency() {} // дефолтный конструктор
 
-    public Currency(String title, String code, double rate, boolean on, boolean isBase ) throws ModelException {
+    public Currency(String title, String code, double rate, boolean on, boolean base ) throws ModelException {
         if (title.length() == 0) throw new ModelException(ModelException.TITLE_EMPTY);
         if (code.length() == 0) throw new ModelException(ModelException.CODE_EMPTY);
         if (rate <=0) throw new ModelException(ModelException.RATE_INCORRECT);
@@ -24,7 +24,8 @@ public class Currency extends Common{ //класс, для создания об
         this.code = code;
         this.rate = rate;
         this.on = on;
-        this.base = isBase;
+        this.base = base;
+        if (this.base) this.on = true;//если валюта базовая, то она автоматически включена
 
     }
 
@@ -74,8 +75,8 @@ public class Currency extends Common{ //класс, для создания об
                 "title='" + title + '\'' +
                 ", code='" + code + '\'' +
                 ", rate=" + rate +
-                ", isOn=" + on +
-                ", isBase=" + base +
+                ", on=" + on +
+                ", base=" + base +
                 '}';
     }
 
@@ -83,16 +84,15 @@ public class Currency extends Common{ //класс, для создания об
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Currency currency = (Currency) o;
-
         return Objects.equals(code, currency.code);
     }
 
     @Override
     public int hashCode() {
-        return code != null ? code.hashCode() : 0;
+        return Objects.hash(code);
     }
+
     @Override
     public String getValueFromComboBox() {
         return title;
@@ -107,10 +107,17 @@ public class Currency extends Common{ //класс, для создания об
         clearBase(sd); // "отчищаем" базовую валюту
     }
     @Override
-    public void postEdit(SaveData sd){
+    public void postEdit(SaveData sd) {
         clearBase(sd);
-        for (Account a : sd.getAccounts())
+        for (Account a : sd.getAccounts()) {
             if (a.getCurrency().equals(sd.getOldCommon())) a.setCurrency(this);
+            for (Transaction t : sd.getTransactions())
+                if (t.getAccount().getCurrency().equals(sd.getOldCommon())) t.getAccount().setCurrency(this);
+            for (Transfer t : sd.getTransfers()) {
+                if (t.getFromAccount().getCurrency().equals(sd.getOldCommon())) t.getFromAccount().setCurrency(this);
+                if (t.getToAccount().getCurrency().equals(sd.getOldCommon())) t.getToAccount().setCurrency(this);
+            }
+        }
     }
 
     private void clearBase(SaveData sd) {
@@ -125,4 +132,4 @@ public class Currency extends Common{ //класс, для создания об
             }
         }
     }
-}//2.4,2.6,3_3
+}//2.4,2.6,3_3,8_11

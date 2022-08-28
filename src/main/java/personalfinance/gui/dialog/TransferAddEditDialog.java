@@ -53,7 +53,7 @@ public class TransferAddEditDialog extends AddEditDialog{//диалоговое 
     }
 
     @Override
-    protected Common getCommonFromForm() throws ModelException { //Метод возвращает
+    public Common getCommonFromForm() throws ModelException { //Метод возвращает
         try {
             Account fromAccount = (Account) ((CommonComboBox) components.get("LABEL_FROM_ACCOUNT")).getSelectedItem();
             Account toAccount = (Account) ((CommonComboBox) components.get("LABEL_TO_ACCOUNT")).getSelectedItem();

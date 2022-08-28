@@ -44,7 +44,7 @@ public final class LeftPanel extends AbstractPanel { //класс, реализ�
 
 
     private void addBalanceCurrency() {
-        for (Currency currency : SaveData.getInstance().getCurrencies()) {
+        for (Currency currency : SaveData.getInstance().getEnableCurrencies()) {
             add(Box.createVerticalStrut(Style.PADDING_BALANCE));//
             add(new PanelBalanceCurrency(currency, Statistics.getBalanceCurrency(currency)));
         }
@@ -77,4 +77,4 @@ public final class LeftPanel extends AbstractPanel { //класс, реализ�
 
         }
     }
-}//6_1
+}//6_1,8_11
