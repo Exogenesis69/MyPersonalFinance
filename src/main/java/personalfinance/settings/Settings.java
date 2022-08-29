@@ -35,12 +35,16 @@ final public class Settings { //final класс, где содержатся н
     private static final File FILE_SETTINGS = new File("saves/settings.ini"); // путь, куда сохраняется файл настройки
     private static File FILE_SAVE = new File("saves/default.myrus"); //путь к последнему открытому файлу. Если нету, то ставим default.myrys
 
+    private static String LANGUAGE = "ru";//Настройка языка(по умолчанию-русский)
+
     public static void init(){
         try {
             Ini ini = new Ini(FILE_SETTINGS);
             Preferences prefs = new IniPreferences(ini); //доступ к настройкам
             String file = prefs.node("Settings").get("FILE_SAVE",null);
             if (file != null) FILE_SAVE = new File(file);
+            String language = prefs.node("Settings").get("LANGUAGE",null);//если удается считать настройку из .ini файла
+            if (language != null) LANGUAGE = language;//то берем и сохраняем её в данном классе
             setLocale();
         } catch (IOException ex) {
             save();
@@ -52,14 +56,25 @@ final public class Settings { //final класс, где содержатся н
     }
 
     public static void setFileSave(File file) {
-        Settings.FILE_SAVE = file;
+        FILE_SAVE = file;
+        save();
+    }
+
+    public static String getLanguage() {
+        return LANGUAGE;
+    }
+
+    public static void setLanguage(String language) {
+        LANGUAGE = language;
+        setLocale();
         save();
     }
 
 
 
-    private static void setLocale() { //устонавливаем язык по умолчанию
-        Locale.setDefault(new Locale("ru"));
+    private static void setLocale() { //устанавливаем язык
+        if (LANGUAGE.equals("ru")) Locale.setDefault(new Locale("ru"));
+        else Locale.setDefault(new Locale("en"));
     }
 
     private static void save() { //сохраняет данные в ini.file с новыми настройками
@@ -74,4 +89,4 @@ final public class Settings { //final класс, где содержатся н
     }
 
 }
-//2_7
+//2_7,10_1
