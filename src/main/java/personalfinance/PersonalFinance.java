@@ -39,7 +39,6 @@ public class PersonalFinance {
         } catch (FontFormatException | IOException ex) {
             Logger.getLogger(PersonalFinance.class.getName()).log(Level.SEVERE,null,ex);
         }
-
     }
 
     private static void testModel() throws ModelException {
@@ -117,6 +116,5 @@ public class PersonalFinance {
         sd.save();
         //sd.load();
         System.out.println(sd);
-
     }
 }//2.1,2.2,3_4

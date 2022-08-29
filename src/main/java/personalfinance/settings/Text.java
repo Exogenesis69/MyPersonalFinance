@@ -1,6 +1,7 @@
 package personalfinance.settings;
 
 
+import javax.swing.*;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -40,6 +41,7 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_FILE", "Файл");
             data.put("MENU_EDIT", "Правка");
             data.put("MENU_VIEW", "Вид");
+            data.put("MENU_SETTINGS", "Настройки");
             data.put("MENU_HELP", "Помощь");
 
             data.put("JANUARY", "Январь");
@@ -93,6 +95,10 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_VIEW_TRANSFERS", "Переводы");
             data.put("MENU_VIEW_CURRENCIES", "Валюты");
             data.put("MENU_VIEW_STATISTICS", "Статистика");
+
+            data.put("MENU_SETTINGS_LANGUAGE", "Язык");
+            data.put("MENU_SETTINGS_LANGUAGE_RUSSIAN", "Русский");
+            data.put("MENU_SETTINGS_LANGUAGE_ENGLISH", "Английский");
 
             data.put("MENU_HELP_ABOUT", "О программе");
 
@@ -190,6 +196,7 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_FILE", "File");
             data.put("MENU_EDIT", "Edit");
             data.put("MENU_VIEW", "View");
+            data.put("MENU_SETTINGS", "Settings");
             data.put("MENU_HELP", "Help");
 
             data.put("JANUARY", "January");
@@ -243,6 +250,10 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_VIEW_TRANSFERS", "Transfers");
             data.put("MENU_VIEW_CURRENCIES", "Currencies");
             data.put("MENU_VIEW_STATISTICS", "Statistics");
+
+            data.put("MENU_SETTINGS_LANGUAGE", "Language");
+            data.put("MENU_SETTINGS_LANGUAGE_RUSSIAN", "Russian");
+            data.put("MENU_SETTINGS_LANGUAGE_ENGLISH", "English");
 
             data.put("MENU_HELP_ABOUT", "About");
 
@@ -334,4 +345,4 @@ final public class Text { // класс с текстовыми констант
                     + "<p>Copyright " + Calendar.getInstance().get(Calendar.YEAR) + "</p></body");
         }
     }
-} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,6,9,6_10,7_1,7_2,8_1,10_1
+} //2.2,2.3,2.9,4_3,4_5,4_6,4_8,5_3,6_1,6_5,6_6,6_7,6,9,6_10,7_1,7_2,8_1,10_1,10_2

@@ -5,6 +5,7 @@ import personalfinance.gui.MainFrame;
 import personalfinance.gui.Refresh;
 import personalfinance.gui.handler.*;
 import personalfinance.settings.HandlerCode;
+import personalfinance.settings.Settings;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 
@@ -27,21 +28,25 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         JMenu file = new JMenu(Text.get("MENU_FILE"));// создаем разделы
         JMenu edit = new JMenu(Text.get("MENU_EDIT"));
         JMenu view = new JMenu(Text.get("MENU_VIEW"));
+        JMenu settings = new JMenu(Text.get("MENU_SETTINGS"));
         JMenu help = new JMenu(Text.get("MENU_HELP"));
 
         file.setIcon(Style.ICON_MENU_FILE); // добавляем иконки
         edit.setIcon(Style.ICON_MENU_EDIT);
         view.setIcon(Style.ICON_MENU_VIEW);
+        settings.setIcon(Style.ICON_MENU_SETTINGS);
         help.setIcon(Style.ICON_MENU_HELP);
 
         add(file);
         add(edit);
         add(view);
+        add(settings);
         add(help);
 
         MenuFileHandler fileHandler = new MenuFileHandler(frame);//Подключаем кнопки
         MenuEditHandler editHandler = new MenuEditHandler(frame);
         MenuViewHandler viewHandler = new MenuViewHandler(frame);
+        MenuViewHandler settingsHandler = new MenuViewHandler(frame);
         MenuHelpHandler helpHandler = new MenuHelpHandler(frame);
 
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_NEW"), Style.ICON_MENU_FILE_NEW, HandlerCode.MENU_FILE_NEW, KeyEvent.VK_N);//KeyEvent.VK_N - реализация горячей клавиши (ctrl + N)
@@ -66,6 +71,29 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
 
         addMenuItem(help, helpHandler, Text.get("MENU_HELP_ABOUT"), Style.ICON_MENU_HELP_ABOUT, HandlerCode.MENU_HELP_ABOUT);
 
+        JMenu language = new JMenu(Text.get("MENU_SETTINGS_LANGUAGE"));//создаем подпункт меню
+        language.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE);
+        settings.add(language);//добавляем в основное меню
+
+        ButtonGroup group = new ButtonGroup();
+        JRadioButtonMenuItem menuRussian = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_RUSSIAN"));
+        JRadioButtonMenuItem menuEnglish = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_ENGLISH"));
+        group.add(menuRussian);//добавляем кнопки в одну группу
+        group.add(menuEnglish);
+
+        menuRussian.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE_RUSSIAN);
+        menuEnglish.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE_ENGLISH);
+        menuRussian.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_RUSSIAN);
+        menuEnglish.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_ENGLISH);
+
+        menuRussian.addActionListener(settingsHandler);
+        menuEnglish.addActionListener(settingsHandler);
+
+        if (Settings.getLanguage().equals("ru")) menuRussian.setSelected(true);
+        else if (Settings.getLanguage().equals("en")) menuEnglish.setSelected(true);
+
+        language.add(menuRussian);
+        language.add(menuEnglish);
     }
 
     private JMenuItem addMenuItem(JMenu menu, Handler listener, String title, ImageIcon icon, String action, int key) { //вспомогательный метод, помогающий уменьшить кол-во кода для пунктов, где есть горячие клавиши
@@ -79,13 +107,11 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         }
         menu.add(item);
         return item;
-
     }
 
     private JMenuItem addMenuItem(JMenu menu, Handler listener, String title, ImageIcon icon, String action) { //если у раздела нет горячей клавиши
     return addMenuItem(menu,listener, title,icon,action,0);
     }
-
 
     @Override
     public void refresh() {
@@ -93,11 +119,10 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         init();
     }
 
-
     @Override
     public void setEnableEditDelete(boolean enable) {
         menuEdit.setEnabled(enable);
         menuDelete.setEnabled(enable);
     }
 
-}//4_3,8_1,8_3,8_4,8_5
+}//4_3,8_1,8_3,8_4,8_5,10_2
