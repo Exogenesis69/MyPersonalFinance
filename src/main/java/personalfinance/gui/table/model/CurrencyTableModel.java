@@ -7,7 +7,6 @@ import personalfinance.settings.Format;
 
 public class CurrencyTableModel extends MainTableModel{//модель для таблицы с валютами
 
-
     private static final int TITLE = 0;//Константы, отвечающие за конкретные поля
     private static final int CODE = 1;
     private static final int RATE = 2;
@@ -18,11 +17,9 @@ public class CurrencyTableModel extends MainTableModel{//модель для т�
         super(SaveData.getInstance().getCurrencies(),columns);
     }
 
-
     @Override
     protected void updateData() { //переключение вывода данных
          data = SaveData.getInstance().getCurrencies();
-
     }
 
     @Override

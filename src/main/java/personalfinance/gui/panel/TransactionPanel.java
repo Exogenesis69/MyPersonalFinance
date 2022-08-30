@@ -1,7 +1,6 @@
 package personalfinance.gui.panel;
 
 import personalfinance.gui.MainFrame;
-import personalfinance.gui.dialog.AccountAddEditDialog;
 import personalfinance.gui.dialog.TransactionAddEditDialog;
 import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.gui.table.TransactionTableData;
@@ -17,5 +16,4 @@ public class TransactionPanel extends RightPanel{//класс для вывод�
                 "TRANSACTIONS", Style.ICON_PANEL_TRANSACTIONS,
                 new JPanel[] {new FunctionsToolBar(new FunctionsHandler(frame, new TransactionAddEditDialog(frame))), new FilterPanel(frame)});
     }
-
 }//6_8,6_12,8_2

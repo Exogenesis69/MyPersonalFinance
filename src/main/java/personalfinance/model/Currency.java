@@ -26,7 +26,6 @@ public class Currency extends Common{ //класс, для создания об
         this.on = on;
         this.base = base;
         if (this.base) this.on = true;//если валюта базовая, то она автоматически включена
-
     }
 
     public String getTitle() {
@@ -109,13 +108,15 @@ public class Currency extends Common{ //класс, для создания об
     @Override
     public void postEdit(SaveData sd) {
         clearBase(sd);
+        for (Currency c :sd.getCurrencies()) {
         for (Account a : sd.getAccounts()) {
-            if (a.getCurrency().equals(sd.getOldCommon())) a.setCurrency(this);
+            if (a.getCurrency().equals(c)) a.setCurrency(c);
+        }
             for (Transaction t : sd.getTransactions())
-                if (t.getAccount().getCurrency().equals(sd.getOldCommon())) t.getAccount().setCurrency(this);
+                if (t.getAccount().getCurrency().equals(c)) t.getAccount().setCurrency(c);
             for (Transfer t : sd.getTransfers()) {
-                if (t.getFromAccount().getCurrency().equals(sd.getOldCommon())) t.getFromAccount().setCurrency(this);
-                if (t.getToAccount().getCurrency().equals(sd.getOldCommon())) t.getToAccount().setCurrency(this);
+                if (t.getFromAccount().getCurrency().equals(c)) t.getFromAccount().setCurrency(c);
+                if (t.getToAccount().getCurrency().equals(c)) t.getToAccount().setCurrency(c);
             }
         }
     }
@@ -132,4 +133,4 @@ public class Currency extends Common{ //класс, для создания об
             }
         }
     }
-}//2.4,2.6,3_3,8_11
+}//2.4,2.6,3_3,8_11,10_3

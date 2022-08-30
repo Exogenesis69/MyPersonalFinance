@@ -19,7 +19,6 @@ public class MenuHelpHandler extends Handler {//класс, реализующи
             case HandlerCode.MENU_HELP_ABOUT: {// действия при варианте нажатия на кнопку "О программе"
                 new AboutDialog().setVisible(true);//Создаем диалоговое окно AboutDialog и делаем его видимым
             }
-
         }
         super.actionPerformed(ae);
     }

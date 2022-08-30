@@ -20,7 +20,5 @@ public final class StatisticsTypePanel extends AbstractPanel{//класс для
     protected void init() {
         MainButton type = new MainButton(title, new ChartHandler(frame), HandlerCode.TYPE);
         add(type);
-
-
     }
 }//7_3,8_8

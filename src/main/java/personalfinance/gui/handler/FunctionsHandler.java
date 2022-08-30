@@ -51,7 +51,6 @@ public class FunctionsHandler extends Handler implements MouseListener, KeyListe
                 TableData td = frame.getRightPanel().getTableData();
                 int row = td.rowAtPoint(me.getPoint());
                 td.setRowSelectionInterval(row,row);
-
             }
         }
     }

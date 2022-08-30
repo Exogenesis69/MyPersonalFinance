@@ -16,7 +16,6 @@ public class Filter { //класс для реализации фильтра п
 
     public Filter() {
         this(STEP_YEAR);
-
     }
     public Filter(int step) {
         this.step = step;
@@ -95,7 +94,6 @@ public class Filter { //класс для реализации фильтра п
                         31,
                         23,59,59).getTime();
                 break;
-
         }
     }
 
@@ -114,5 +112,4 @@ public class Filter { //класс для реализации фильтра п
         }
         setFromTo(calendar);
     }
-
 }//2.5,6_8

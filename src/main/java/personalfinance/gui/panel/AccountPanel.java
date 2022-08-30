@@ -14,5 +14,4 @@ public class AccountPanel extends RightPanel{//класс для вывода п
                 "ACCOUNTS", Style.ICON_PANEL_ACCOUNTS,
                 new FunctionsToolBar(new FunctionsHandler(frame, new AccountAddEditDialog(frame))));
     }
-
 }//6_6,8_2

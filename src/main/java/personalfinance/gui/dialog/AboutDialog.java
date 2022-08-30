@@ -41,6 +41,5 @@ public class AboutDialog extends JDialog {// класс, реализующий 
         add(pane);//добавляем на наше диалоговое окно
         pack(); //масштабируем окно, чтобы там поместилась вся информация
         setLocationRelativeTo(null);//расположение окна по центру(null) рабочего стола
-
     }
 }//5_3

@@ -1,7 +1,6 @@
 package personalfinance.gui.handler;
 
 import personalfinance.gui.MainFrame;
-import personalfinance.gui.panel.*;
 import personalfinance.settings.HandlerCode;
 
 import java.awt.event.ActionEvent;
@@ -14,7 +13,6 @@ public class MainToolBarHandler extends MenuViewHandler {//класс, реал�
 
     @Override
     public void actionPerformed(ActionEvent ae) {//метод присвоения действий при нажатии на кнопку тулбара
-
         switch (ae.getActionCommand()) {//перечисляем константы кодов-обработчиков
 
             case HandlerCode.TOOLBAR_OVERVIEW: {// действия при варианте нажатия на кнопку "Обзор"

@@ -1,8 +1,6 @@
 package personalfinance.exception;
 
-import personalfinance.settings.Text;
-
-public class ModelException extends Exception {   //механизм для обработки ошибок связанных с моделью. Не забыть наследоваться от Exception
+public class ModelException extends Exception {//Механизм для обработки ошибок связанных с моделью. Не забыть наследоваться от Exception
 
     public static final int TITLE_EMPTY = 1;
     public static final int IS_EXISTS = 2;
@@ -15,15 +13,11 @@ public class ModelException extends Exception {   //механизм для об
     public static final int AMOUNT_FORMAT = 9;
     public static final int NO_BASE_CURRENCY = 10;
 
-
-
-
     private final int code;
 
     public ModelException(int code) { //конструктор, который принимает код ошибки
 
         this.code = code;
-
     }
 
     public String getMessage() { // в зависимости от кода возвращаем константу

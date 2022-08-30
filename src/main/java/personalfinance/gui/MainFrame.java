@@ -17,7 +17,6 @@ public final class MainFrame extends JFrame implements Refresh { //Класс, �
     private final GridBagConstraints constraints;
     private final MainMenu mb;//инициализируем меню
     private final LeftPanel leftPanel;//инициализируем левую панель
-
     private RightPanel rightPanel;//инициализируем правую панель
     private final MainToolBar tb;//инициализируем тулбар
 
@@ -33,7 +32,6 @@ public final class MainFrame extends JFrame implements Refresh { //Класс, �
 
         setLayout(new GridBagLayout());//Настраиваем компоновщик (GridBagLayout позволяет размещать компоненты (кнопки, панели и т.д.) в виде таблицы)
 
-
         constraints = new GridBagConstraints();// инициализируем
 
         constraints.gridx = 0;
@@ -42,7 +40,6 @@ public final class MainFrame extends JFrame implements Refresh { //Класс, �
 
         tb = new MainToolBar(new MainToolBarHandler(this));
         add(tb, constraints);//создаем новый тулбар со значениями
-
 
         constraints.gridy = 1;
         constraints.gridwidth = 1;
@@ -53,18 +50,16 @@ public final class MainFrame extends JFrame implements Refresh { //Класс, �
 
         setRightPanel(new OverviewPanel(this));//Добавляем правую панель
 
-
         pack();
         setLocationRelativeTo(null); // окно программы будет появляться по центру
 
         addWindowListener(new MainWindowHandler());//добавляем обработчик закрытия программы из главного окна
     }
 
-
     @Override
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this); //обновляем фрейм, чтобы он перерисовался заново
-        mb.refresh();
+        tb.refresh();
         leftPanel.refresh();
         rightPanel.refresh();
         pack();

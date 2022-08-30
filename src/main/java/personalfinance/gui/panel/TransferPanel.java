@@ -1,7 +1,6 @@
 package personalfinance.gui.panel;
 
 import personalfinance.gui.MainFrame;
-import personalfinance.gui.dialog.AccountAddEditDialog;
 import personalfinance.gui.dialog.TransferAddEditDialog;
 import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.gui.table.TransferTableData;
@@ -17,5 +16,4 @@ public class TransferPanel extends RightPanel{//класс для вывода �
                 "TRANSFERS", Style.ICON_PANEL_TRANSFERS,
                 new JPanel[] {new FunctionsToolBar(new FunctionsHandler(frame, new TransferAddEditDialog(frame))), new FilterPanel(frame)});
     }
-
 }//6_9,6_12,8_2

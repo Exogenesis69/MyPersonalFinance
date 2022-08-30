@@ -7,7 +7,7 @@ import personalfinance.model.*;
 import java.util.List;
 
 
-@XmlRootElement(name= "data")//деректива, добавляющая библиотеку из скаченного файла
+@XmlRootElement(name= "data")//директива, добавляющая библиотеку из скаченного файла
 
 public class Wrapper { //класс-оболочка для данных, сохраняемых в xml-файл
 
@@ -16,8 +16,6 @@ public class Wrapper { //класс-оболочка для данных, сох
     private List<Transaction> transactions;
     private List<Transfer> transfers;
     private List<Currency> currencies;
-
-
 
     @XmlElement(name = "articles")
     public List<Article> getArticles() {

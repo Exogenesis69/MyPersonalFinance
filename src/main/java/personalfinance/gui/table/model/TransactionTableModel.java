@@ -25,15 +25,12 @@ public class TransactionTableModel  extends MainTableModel{//модель для
     public TransactionTableModel(String[] columns, int count) {
         super(SaveData.getInstance().getTransactionsOnCount(count), columns);//выводится по количеству
         this.count = count;// поле
-
     }
-
 
     @Override
     protected void updateData() { //переключение вывода данных
         if (count == -1) data = SaveData.getInstance().getFilterTransactions();
         else data = SaveData.getInstance().getTransactionsOnCount(count);
-
     }
 
     @Override

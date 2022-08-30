@@ -29,35 +29,25 @@ public class MainButton extends JButton {//Класс, реализующий ш
         this("",icon,listener,action);
     }
 
-
     private class HoverButton implements MouseListener {
 
         @Override
-        public void mouseClicked(MouseEvent me) {
-
-        }
+        public void mouseClicked(MouseEvent me) {}
 
         @Override
-        public void mousePressed(MouseEvent me) {
-
-        }
+        public void mousePressed(MouseEvent me) {}
 
         @Override
-        public void mouseReleased(MouseEvent me) {
-
-        }
+        public void mouseReleased(MouseEvent me) {}
 
         @Override
         public void mouseEntered(MouseEvent me) {
             ((MainButton) me.getSource()).setBackground(Style.COLOR_BUTTON_BG_HOVER);//устанавливаем цвет кнопки, когда наведен курсор
-
         }
 
         @Override
         public void mouseExited(MouseEvent me) {
             ((MainButton) me.getSource()).setBackground(Style.COLOR_BUTTON_BG_NORMAL);
         }
-
-
     }
 }//4_4, 4_5

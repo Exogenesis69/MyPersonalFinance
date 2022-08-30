@@ -1,7 +1,6 @@
 package personalfinance.gui.table;
 
 import personalfinance.gui.handler.FunctionsHandler;
-import personalfinance.gui.handler.Handler;
 import personalfinance.gui.table.model.AccountTableModel;
 import personalfinance.settings.Style;
 

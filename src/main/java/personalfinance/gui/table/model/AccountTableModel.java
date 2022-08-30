@@ -4,9 +4,7 @@ import personalfinance.model.Account;
 import personalfinance.saveload.SaveData;
 import personalfinance.settings.Format;
 
-
 public class AccountTableModel extends MainTableModel{//модель для таблицы со счетами
-
 
     private static final int TITLE = 0;//Константы, отвечающие за конкретные поля
     private static final int AMOUNT = 1;
@@ -15,11 +13,9 @@ public class AccountTableModel extends MainTableModel{//модель для та
         super(SaveData.getInstance().getAccounts(),columns);
     }
 
-
     @Override
     protected void updateData() { //переключение вывода данных
          data = SaveData.getInstance().getAccounts();
-
     }
 
     @Override

@@ -2,7 +2,6 @@ package personalfinance.model;
 
 import personalfinance.saveload.SaveData;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,7 +22,6 @@ public class Statistics { //класс для возврата статисти�
         double amount = 0;
         for (Account account : ad.getAccounts()) {
             amount += account.getAmount() * account.getCurrency().getRateByCurrency(currency);
-
         }
         return amount;
     }
@@ -54,7 +52,6 @@ public class Statistics { //класс для возврата статисти�
     }
     private static  double round(double value) { // метод округления до двух знаков
         return (double) Math.round(value *100) /100;
-
     }
 }
 // Lesson_2_6,7_1

@@ -11,37 +11,32 @@ final public class Format { // final класс отвечает за форма
 
     public static String amount(double amount) {
         return String.format(Settings.FORMAT_AMOUNT, amount); //возвращает строку в формате суммы
-
     }
 
     public static String amount(double amount, Currency currency) { //перегружаем метод
-        return amount(amount) + " " + currency.getCode();// возвращаеи строку в формате + код валюты
-
+        return amount(amount) + " " + currency.getCode();// возвращаем строку в формате + код валюты
     }
 
     public static String rate(double rate) {
         return String.format(Settings.FORMAT_RATE, rate);//возвращает строку в формате курса валют
     }
     public static String rate(double rate, Currency currency) { //перегружаем метод
-        return amount(rate) + " " + currency.getCode();// возвращаеи строку в формате + код валюты
-
+        return amount(rate) + " " + currency.getCode();// возвращаем строку в формате + код валюты
     }
 
 
     public static String date(Date date) {
         return dateFormat(date, Settings.FORMAT_DATE);
-
     }
 
     public static String dateMonth(Date date) {
         return dateFormat(date, Settings.FORMAT_DATE_MONTH);
-
     }
 
     public static String dateYear(Date date) {
         return dateFormat(date, Settings.FORMAT_DATE_YEAR);
-
     }
+
     private static String dateFormat(Date date, String format) { //обработка трех методов date
         SimpleDateFormat sdf = new SimpleDateFormat(format, new MainDateFormatSymbols());
         return sdf.format(date);
@@ -71,12 +66,9 @@ final public class Format { // final класс отвечает за форма
     }
 
     private static class MainDateFormatSymbols extends DateFormatSymbols { //переопределить название всех месяцев
-
         @Override
         public String[] getMonths() {
             return Text.getMonths();
         }
-
     }
-
 }//2_9

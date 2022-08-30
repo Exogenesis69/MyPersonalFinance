@@ -1,7 +1,6 @@
 package personalfinance.gui.panel;
 
 import personalfinance.gui.MainFrame;
-import personalfinance.gui.dialog.AccountAddEditDialog;
 import personalfinance.gui.dialog.ArticleAddEditDialog;
 import personalfinance.gui.handler.FunctionsHandler;
 import personalfinance.gui.table.ArticleTableData;
@@ -15,5 +14,4 @@ public class ArticlePanel extends RightPanel{//класс для вывода п
                 "ARTICLES", Style.ICON_PANEL_ARTICLES,
                 new FunctionsToolBar(new FunctionsHandler(frame, new ArticleAddEditDialog(frame))));
     }
-
 }//6_7,8_2

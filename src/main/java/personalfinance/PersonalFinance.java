@@ -13,21 +13,13 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class PersonalFinance {
 
     public static void main(String[] args) {
         init();
         MainFrame frame = new MainFrame();
         frame.setVisible(true);
-
-        //SaveData sd = SaveData.getInstance();
-        //sd.updateCurrencies();
-        //System.out.println(sd);
-        //testModel();
     }
-
-
 
     private static void init() { //вызываем метод инициализации из класса Text и подключаем шрифт
         try {

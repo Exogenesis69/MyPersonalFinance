@@ -7,7 +7,6 @@ import personalfinance.gui.dialog.ErrorDialog;
 import personalfinance.saveload.SaveData;
 import personalfinance.settings.HandlerCode;
 import personalfinance.settings.Settings;
-import personalfinance.settings.Text;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -1,6 +1,6 @@
 package personalfinance.gui.table.model;
 
-import personalfinance.model.Transaction;
+
 import personalfinance.model.Transfer;
 import personalfinance.saveload.SaveData;
 import personalfinance.settings.Format;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TransferTableModel extends MainTableModel{//модель для таблицы с переводами
-
 
     private static final int DATE = 0;//Константы, отвечающие за конкретные поля
     private static final int FROM_ACCOUNT = 1;
@@ -24,11 +23,9 @@ public class TransferTableModel extends MainTableModel{//модель для т�
         this.columns = new ArrayList(Arrays.asList(columns));
     }
 
-
     @Override
     protected void updateData() { //переключение вывода данных
          data = SaveData.getInstance().getFilterTransfers();
-
     }
 
     @Override

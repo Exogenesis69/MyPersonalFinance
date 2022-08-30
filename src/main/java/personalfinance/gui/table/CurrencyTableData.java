@@ -24,7 +24,6 @@ public class CurrencyTableData extends TableData {//класс отвечающ�
         for (String column : columns) {
             getColumn(Text.get(column)).setCellRenderer(new TableCellOnOffRenderer());
         }
-
     }
 
     private class TableCellOnOffRenderer extends MainTableCellRenderer {//создаем вложенный класс для рендеринга
@@ -37,6 +36,4 @@ public class CurrencyTableData extends TableData {//класс отвечающ�
             return renderer;
         }
     }
-
-
 }//6_10,8_2

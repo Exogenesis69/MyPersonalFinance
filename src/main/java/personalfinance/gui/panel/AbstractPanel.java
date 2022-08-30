@@ -13,8 +13,6 @@ abstract public class AbstractPanel extends JPanel implements Refresh {//Абс�
         this.frame = frame;
     }
 
-
-
     @Override
     public void refresh() {//переопределяем и реализовываем интерфейс refresh
         removeAll();
@@ -22,5 +20,4 @@ abstract public class AbstractPanel extends JPanel implements Refresh {//Абс�
     }
 
     abstract protected void init();
-
 }//6_1

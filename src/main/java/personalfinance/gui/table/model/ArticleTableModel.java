@@ -3,9 +3,7 @@ package personalfinance.gui.table.model;
 import personalfinance.model.Article;
 import personalfinance.saveload.SaveData;
 
-
 public class ArticleTableModel extends MainTableModel{//модель для таблицы со статьями
-
 
     private static final int TITLE = 0;//Константы, отвечающие за конкретные поля
 
@@ -13,11 +11,9 @@ public class ArticleTableModel extends MainTableModel{//модель для та
         super(SaveData.getInstance().getArticles(),columns);
     }
 
-
     @Override
     protected void updateData() { //переключение вывода данных
          data = SaveData.getInstance().getArticles();
-
     }
 
     @Override

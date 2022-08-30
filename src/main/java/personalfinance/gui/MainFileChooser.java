@@ -12,7 +12,7 @@ public class MainFileChooser extends JFileChooser {//класс для созд�
 
     public MainFileChooser(MainFrame frame) {//создаем свой конструктор
         this.frame = frame;
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Program Files", Settings.SAVE_FILE_EXT);//фильтр для формата файла (только .myrus)
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Program Files", Settings.SAVE_FILE_EXT);//фильтр для формата файла (только .sukhd)
         setFileFilter(filter);//устанавливаем фильтр файлчюсеру
         setAcceptAllFileFilterUsed(false);//запрет на выбор всех файлов
         setCurrentDirectory(Settings.SAVE_DIR);//по умолчанию открывается нужная для сохранения директория
@@ -47,8 +47,6 @@ public class MainFileChooser extends JFileChooser {//класс для созд�
         UIManager.put("FileChooser.acceptAllFileFilterText", Text.get("FC_ALL_FILTER"));
 
         updateUI();//Обновляем, чтобы изменения вступили в силу
-
-
     }
 
     public  int open() {

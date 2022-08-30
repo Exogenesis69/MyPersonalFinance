@@ -37,8 +37,6 @@ public class TransferAddEditDialog extends AddEditDialog{//диалоговое 
         values.put("LABEL_DATE", new Date());//задаем значение по умолчанию в зависимости от формата
         values.put("LABEL_FROM_AMOUNT", Format.amount(0));
         values.put("LABEL_TO_AMOUNT", Format.amount(0));
-
-
     }
 
     @Override

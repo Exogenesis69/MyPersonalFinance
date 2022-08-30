@@ -14,7 +14,7 @@ public class SaveLoad { // класс отвечает за механизм с�
     public static void load(SaveData sd) {//загрузка
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
-            Unmarshaller um = context.createUnmarshaller();//денмаршелизируем, т.е. данные из файла преобразуем в объекты
+            Unmarshaller um = context.createUnmarshaller();//Демаршелизируем, т.е. данные из файла преобразуем в объекты
            Wrapper wrapper =  (Wrapper) um.unmarshal(Settings.getFileSave()); //демаршелизируем в объект типа wrapper
             sd.setAccounts(wrapper.getAccounts());
             sd.setArticles(wrapper.getArticles());
@@ -29,7 +29,7 @@ public class SaveLoad { // класс отвечает за механизм с�
     public static void save(SaveData sd) { //сохранение
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
-            Marshaller m = context.createMarshaller(); //маршализируем т.е. превращаем объекты, находящиеся здесь в строки, которые можно записать в файл
+            Marshaller m = context.createMarshaller(); //Маршализируем т.е. превращаем объекты, находящиеся здесь в строки, которые можно записать в файл
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);//настраиваем формат маршаллера
 
             Wrapper wrapper = new Wrapper(); //создаем объект класса-обертки Wrapper
@@ -46,6 +46,5 @@ public class SaveLoad { // класс отвечает за механизм с�
         } catch (JAXBException ex) {
             Logger.getLogger(SaveLoad.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 }//3_2,3_3

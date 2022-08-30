@@ -37,7 +37,7 @@ public final class SaveData { // final класс для создания объ
 
     private void sort() { // создаем метод сортировки для каждого из элементов
         this.articles.sort((Article a, Article a1) -> a.getTitle().compareToIgnoreCase(a1.getTitle())); //статьи сортируем по алфавиту
-        //обращаемся к листу с помощью лямбда выражения(есть два объекта: a и a1. Сравниваем getTitle(первую букву), игнорируя при этом регистр
+        //Обращаемся к листу с помощью лямбда выражения(есть два объекта: a и a1. Сравниваем getTitle(первую букву), игнорируя при этом регистр
 
         this.accounts.sort((Account a, Account a1) -> a.getTitle().compareToIgnoreCase(a1.getTitle()));//для счетов делаем точно также
 
@@ -179,8 +179,7 @@ public final class SaveData { // final класс для создания объ
     public void edit(Common oldC, Common newC) throws ModelException { //метод для редактирования данных
         List ref = getRef(oldC);
         if (ref.contains(newC) && oldC != ref.get(ref.indexOf(newC)))
-            throw new ModelException(ModelException.IS_EXISTS);
-        //выбрасываем исключение только когда новый объект не равен старому
+            throw new ModelException(ModelException.IS_EXISTS);//выбрасываем исключение только когда новый объект не равен старому
         ref.set(ref.indexOf(oldC), newC);// заменяем старый объект новым объектом
         oldCommon = oldC;
         newC.postEdit(this);
@@ -221,6 +220,4 @@ public final class SaveData { // final класс для создания объ
         else if (c instanceof Transfer) return transfers;
         return null;
     }
-
-
 }//2_6,3_2,3_3,3_5,6_1,8_1

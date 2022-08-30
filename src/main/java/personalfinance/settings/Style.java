@@ -1,7 +1,6 @@
 package personalfinance.settings;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
@@ -123,5 +122,4 @@ final public class Style { //Final класс: не будем создават�
     public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");
     public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
     public static final ImageIcon ICON_PANEL_STATISTICS = new ImageIcon("images/statistics_panel.png");
-
 }//2_8,4_3,4_5,4_6,4_7,5_3,5_4,5_5,6_1,6_4,6_5,6_6,6_7,6_9,6_10,6_12,7_1,7,2,10_2

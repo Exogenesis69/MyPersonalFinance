@@ -26,7 +26,6 @@ public class TransactionTableData extends TableData {//класс, отвеча�
     @Override
     protected final void init() {
         getColumn(Text.get("AMOUNT")).setCellRenderer(new TableCellAmountRenderer());//подключаем рендеринг к столбцу amount
-
     }
 
     private  class TableCellAmountRenderer extends MainTableCellRenderer {//создаем вложенный класс для рендеринга

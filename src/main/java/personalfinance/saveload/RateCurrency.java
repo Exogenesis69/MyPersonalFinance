@@ -7,7 +7,6 @@ import org.w3c.dom.NodeList;
 import personalfinance.model.Currency;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -9,11 +9,10 @@ import javax.swing.border.EmptyBorder;
 
 abstract public class AbstractToolBar extends JPanel implements Refresh {//абстрактный класс для  шаблона тулбаров
     private final Handler handler;
-    public AbstractToolBar(EmptyBorder border, Handler handler) {//в будущем будем подключать обработчик
+    public AbstractToolBar(EmptyBorder border, Handler handler) {
        super();
        this.handler = handler;
        setBorder(border);
-
     }
 
     abstract protected void init();//абстрактный метод, который будет реализовываться в дочерних классах
@@ -31,7 +30,6 @@ abstract public class AbstractToolBar extends JPanel implements Refresh {//аб�
         add(button);//добавляем кнопку на панель
         return button;//возвращаем ее для сохранения
     }
-
 
     @Override
     public void refresh() {//метод для обновления данных

@@ -46,7 +46,7 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         MenuFileHandler fileHandler = new MenuFileHandler(frame);//Подключаем кнопки
         MenuEditHandler editHandler = new MenuEditHandler(frame);
         MenuViewHandler viewHandler = new MenuViewHandler(frame);
-        MenuViewHandler settingsHandler = new MenuViewHandler(frame);
+        MenuSettingsHandler settingsHandler = new MenuSettingsHandler(frame);
         MenuHelpHandler helpHandler = new MenuHelpHandler(frame);
 
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_NEW"), Style.ICON_MENU_FILE_NEW, HandlerCode.MENU_FILE_NEW, KeyEvent.VK_N);//KeyEvent.VK_N - реализация горячей клавиши (ctrl + N)
@@ -124,5 +124,4 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         menuEdit.setEnabled(enable);
         menuDelete.setEnabled(enable);
     }
-
-}//4_3,8_1,8_3,8_4,8_5,10_2
+}//4_3,8_1,8_3,8_4,8_5,10_2,10_3

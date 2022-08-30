@@ -13,7 +13,6 @@ public class Transaction extends Common { //класс для создания �
     private String notice; // примечание
     private Date date; // дата транзакции
 
-
     public Transaction() {
     }
 
@@ -21,6 +20,7 @@ public class Transaction extends Common { //класс для создания �
 
         if (account == null) throw new ModelException(ModelException.ACCOUNT_EMPTY);
         if (article == null) throw new ModelException(ModelException.ARTICLE_EMPTY);
+        if (date == null) throw new ModelException(ModelException.DATE_FORMAT);
 
         this.account = account;
         this.article = article;
@@ -35,7 +35,6 @@ public class Transaction extends Common { //класс для создания �
 
     public Transaction(Account account, Article article, double amount, Date date) throws ModelException { //конструктор без примечания
         this(account,article,amount, "", date);
-
     }
 
     public Transaction(Account account, Article article, double amount) throws ModelException { //конструктор без примечания и даты
@@ -112,4 +111,4 @@ public class Transaction extends Common { //класс для создания �
         for(Account a : sd.getAccounts())
             a.setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
     }
-}//2.4, 3_3
+}//2.4, 3_3,10_3

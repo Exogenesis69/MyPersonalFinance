@@ -1,7 +1,5 @@
 package personalfinance.settings;
 
-
-import javax.swing.*;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -191,7 +189,7 @@ final public class Text { // класс с текстовыми констант
                     + "<br /><a style='font-weight: bold;' href='https://vk.com/exogen69'>https://vk.com/exogen69</a></p>"
                     + "<p>Copyright " + Calendar.getInstance().get(Calendar.YEAR) + "</p></body");
         }
-        else {
+        else if (Settings.getLanguage().equals("en")) {
             data.put("PROGRAM_NAME", "Personal finance");
             data.put("MENU_FILE", "File");
             data.put("MENU_EDIT", "Edit");
@@ -233,7 +231,7 @@ final public class Text { // класс с текстовыми констант
             data.put("YES", "Yes");
             data.put("NO", "No");
 
-            data.put("MENU_FILE_NEW", "File");
+            data.put("MENU_FILE_NEW", "New");
             data.put("MENU_FILE_OPEN", "Open");
             data.put("MENU_FILE_SAVE", "Save");
             data.put("MENU_FILE_UPDATE_CURRENCIES", "Update currencies");

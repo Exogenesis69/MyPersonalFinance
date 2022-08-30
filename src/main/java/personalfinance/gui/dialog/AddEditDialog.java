@@ -31,7 +31,6 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
         this.frame = frame;
         addWindowListener(new AddEditDialogHandler(frame, this));
         setResizable(false);//запрещаем редактировать размер окна
-
     }
 
     public Common getCommon() {
@@ -92,7 +91,6 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
             label.setIcon(icons.get(key));//устанавливаем иконку
             label.setFont(Style.FONT_DIALOG_LABEL);//устанавливаем шрифт
 
-
             JComponent component = entry.getValue(); // устанавливаем значения в зависимости от типа компонента
             if(component instanceof JTextField) {//Если component унаследован от текстового поля
                 component.setPreferredSize(Style.DIMENSION_DIALOG_TEXTFIELD_SIZE);//устанавливаем размер поля
@@ -131,6 +129,7 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
         pack();
         setLocationRelativeTo(null);
     }
+
     protected class CommonComboBox extends JComboBox {//создаем внутренний класс для форматирования вывода объектов(чтобы объекты не выводились приведенными к toString
 
         public CommonComboBox(Object[] objs) { //создаем свой собственный элемент КомбоБокс
@@ -146,5 +145,4 @@ abstract public class AddEditDialog extends JDialog {//Абстрактный к
             });
         }
     }
-
 }//5_4,5_5,8_11

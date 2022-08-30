@@ -19,8 +19,6 @@ abstract public class MainTableModel extends AbstractTableModel implements Refre
         this.columns = new ArrayList(Arrays.asList(columns));
     }
 
-
-
     @Override
     public int getRowCount() { //строк в таблице столько, сколько элементов содержится в ней
         return data.size();
@@ -55,6 +53,4 @@ abstract public class MainTableModel extends AbstractTableModel implements Refre
     }
 
    abstract protected void updateData();
-
-
 }//6_3,6_10,8_2

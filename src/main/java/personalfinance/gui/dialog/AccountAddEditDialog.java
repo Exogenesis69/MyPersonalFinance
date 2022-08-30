@@ -28,8 +28,6 @@ public class AccountAddEditDialog extends AddEditDialog{//диалоговое �
         icons.put("LABEL_START_AMOUNT", Style.ICON_AMOUNT);
 
         values.put("LABEL_START_AMOUNT", Format.amount(0));//задаем значение по умолчанию в зависимости от формата
-
-
     }
 
     @Override

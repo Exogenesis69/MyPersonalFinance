@@ -4,7 +4,6 @@ import org.ini4j.Ini;
 import org.ini4j.IniPreferences;
 import org.ini4j.Wini;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
@@ -16,8 +15,7 @@ final public class Settings { //final класс, где содержатся н
 
     public static final File FONT_GOTHAMPRO = new File("fonts/GothamPro.ttf");// путь к шрифту
     public static final File SAVE_DIR = new File("saves/"); // сохранение файлов по умолчанию
-    public static final String SAVE_FILE_EXT = "myrus"; //расширение для сейвфайлов
-
+    public static final String SAVE_FILE_EXT = "sukhd"; //расширение для сейвфайлов
 
 
     // форматирование данных
@@ -31,9 +29,8 @@ final public class Settings { //final класс, где содержатся н
 
     public static final String[] CURRENCIES_CODE = new String[]{"RUB", "USD", "EUR", "BYN", "UAH"}; // код валют
 
-
     private static final File FILE_SETTINGS = new File("saves/settings.ini"); // путь, куда сохраняется файл настройки
-    private static File FILE_SAVE = new File("saves/default.myrus"); //путь к последнему открытому файлу. Если нету, то ставим default.myrys
+    private static File FILE_SAVE = new File("saves/default.sukhd"); //путь к последнему открытому файлу. Если нету, то ставим default.myrys
 
     private static String LANGUAGE = "ru";//Настройка языка(по умолчанию-русский)
 
@@ -70,8 +67,6 @@ final public class Settings { //final класс, где содержатся н
         save();
     }
 
-
-
     private static void setLocale() { //устанавливаем язык
         if (LANGUAGE.equals("ru")) Locale.setDefault(new Locale("ru"));
         else Locale.setDefault(new Locale("en"));
@@ -87,6 +82,5 @@ final public class Settings { //final класс, где содержатся н
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }
 //2_7,10_1

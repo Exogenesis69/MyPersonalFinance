@@ -14,5 +14,4 @@ public class OverviewPanel extends RightPanel{//класс для вывода �
                 new TransactionTableData(new FunctionsHandler(frame, new TransactionAddEditDialog(frame)), Settings.COUNT_OVERVIEW_ROWS),
                 "LAST_TRANSACTIONS", Style.ICON_PANEL_OVERVIEW);
     }
-
 }//6_5,8_2

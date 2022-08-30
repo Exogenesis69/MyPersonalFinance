@@ -3,7 +3,6 @@ package personalfinance.model;
 import personalfinance.exception.ModelException;
 import personalfinance.saveload.SaveData;
 
-import java.awt.*;
 import java.util.Objects;
 import java.util.List;
 

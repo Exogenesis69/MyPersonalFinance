@@ -5,11 +5,11 @@ import personalfinance.saveload.SaveData;
 
 import java.util.Objects;
 
-public class Article extends Common { // класс для создания объекта статьи,наследуемся от Common
+public class Article extends Common { // класс для создания объекта статьи, наследуемся от Common
 
     private String title; // должен быть заголовок
 
-    public Article() {} // пустой конструктор для каждого объекта, чтобы программа корректно работала. Тот класс который сохраняет и загружает объекты в файл требут наличие пустого конструктора.
+    public Article() {} // Пустой конструктор для каждого объекта, чтобы программа корректно работала. Класс, который сохраняет и загружает объекты в файл требует наличие пустого конструктора.
 
     public Article (String title) throws ModelException {
         if (title.length() == 0)

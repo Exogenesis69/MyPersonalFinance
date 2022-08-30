@@ -2,10 +2,8 @@ package personalfinance.gui.dialog;
 
 import personalfinance.exception.ModelException;
 import personalfinance.gui.MainFrame;
-import personalfinance.model.Account;
 import personalfinance.model.Common;
 import personalfinance.model.Currency;
-import personalfinance.saveload.SaveData;
 import personalfinance.settings.Format;
 import personalfinance.settings.Settings;
 import personalfinance.settings.Style;
@@ -27,17 +25,13 @@ public class CurrencyAddEditDialog extends AddEditDialog{//диалоговое 
         components.put("LABEL_ON", new JComboBox(new String[] {Text.get("YES"), Text.get("NO")}));
         components.put("LABEL_BASE", new JComboBox(new String[] {Text.get("YES"), Text.get("NO")}));
 
-
         icons.put("LABEL_TITLE", Style.ICON_TITLE);
         icons.put("LABEL_CODE", Style.ICON_CODE);
         icons.put("LABEL_RATE", Style.ICON_RATE);
         icons.put("LABEL_ON", Style.ICON_ON);
         icons.put("LABEL_BASE", Style.ICON_BASE);
 
-
         values.put("LABEL_RATE", Format.amount(1));//задаем значение по умолчанию в зависимости от формата
-
-
     }
 
     @Override

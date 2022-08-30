@@ -18,9 +18,7 @@ public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс
     }
 
     @Override
-    public void refresh() {
-
-    }
+    public void refresh() {}
     private void init() {//метод инициализации
         JMenuItem editItem = new JMenuItem(Text.get("EDIT"));//создаем пункты меню
         JMenuItem deleteItem = new JMenuItem(Text.get("DELETE"));
@@ -36,6 +34,5 @@ public class TablePopupMenu  extends JPopupMenu implements Refresh {//класс
 
         add(editItem);//добавляем в само меню
         add(deleteItem);
-
     }
 }//6_11,8_10

@@ -11,7 +11,6 @@ import personalfinance.settings.Text;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseListener;
 
 abstract public class TableData extends JTable implements Refresh {//абстрактный класс отвечающий за демонстрацию модели
 
@@ -19,7 +18,6 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
     private final TablePopupMenu popup;//поле для всплывающего меню
     private final ImageIcon[] icons;
     private final String[] columns;//массив с языковыми константами для столбцов
-
 
     public TableData(MainTableModel model, FunctionsHandler handler, String[] columns, ImageIcon[] icons) {
         super(model);
@@ -73,9 +71,7 @@ abstract public class TableData extends JTable implements Refresh {//абстр�
         init();
     }
 
-    protected void init() {
-
-    }
+    protected void init() {}
 
     public FunctionsHandler getFunctionsHandler() {
         return handler;

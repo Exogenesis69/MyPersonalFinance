@@ -22,6 +22,4 @@ public final class MainToolBar extends AbstractToolBar { //final класс дл
         addButton(Text.get("TOOLBAR_CURRENCIES"), Style.ICON_TOOLBAR_CURRENCIES, HandlerCode.TOOLBAR_CURRENCIES, true);
         addButton(Text.get("TOOLBAR_STATISTICS"), Style.ICON_TOOLBAR_STATISTICS, HandlerCode.TOOLBAR_STATISTICS, true);
     }
-
-
 }//4_5,4_6,8_6
