@@ -20,6 +20,7 @@ final public class HandlerCode { // final класс, где содержатс�
 
     public static final String MENU_SETTINGS_LANGUAGE_RUSSIAN = "MENU_SETTINGS_LANGUAGE_RUSSIAN";
     public static final String MENU_SETTINGS_LANGUAGE_ENGLISH = "MENU_SETTINGS_LANGUAGE_ENGLISH";
+    public static final String MENU_SETTINGS_LANGUAGE_ITALIAN = "MENU_SETTINGS_LANGUAGE_ITALIAN";
 
     public static final String MENU_HELP_ABOUT = "MENU_HELP_ABOUT"; // Пункт меню "Помощь"
 

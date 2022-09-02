@@ -48,7 +48,7 @@ public final class MainFrame extends JFrame implements Refresh { //Класс, �
         leftPanel = new LeftPanel(this);//инициализируем левую панель
         add(leftPanel,constraints);//добавляем левую панель
 
-        setRightPanel(new OverviewPanel(this));//Добавляем правую панель
+        setRightPanel(new TransactionPanel(this));//Добавляем правую панель
 
         pack();
         setLocationRelativeTo(null); // окно программы будет появляться по центру

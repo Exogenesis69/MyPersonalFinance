@@ -22,15 +22,13 @@ public final class FunctionsToolBar extends AbstractToolBar implements EnableEdi
         addButton(Text.get("ADD"), Style.ICON_ADD, HandlerCode.ADD, false);//добавляем кнопку "добавить"
         editButton = addButton(Text.get("EDIT"), Style.ICON_EDIT, HandlerCode.EDIT, false);
         deleteButton = addButton(Text.get("DELETE"), Style.ICON_DELETE, HandlerCode.DELETE, false);
-
+        editButton.setEnabled(false);
+        deleteButton.setEnabled(false);
     }
 
     @Override
     public void setEnableEditDelete(boolean enable) {
         editButton.setEnabled(enable);
         deleteButton.setEnabled(enable);
-
     }
-
-
 }//4_6,8_2

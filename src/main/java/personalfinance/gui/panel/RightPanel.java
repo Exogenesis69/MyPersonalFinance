@@ -56,6 +56,7 @@ abstract public class RightPanel extends AbstractPanel {//абстрактный
         }
         frame.getMenu().setEnableEditDelete(false);
 
+
         //проверяем таблицу на то, выделен ли элемент или нет
         if (td != null) {//если элементы не равны нулю, то проверяем таблицу на то, выделен ли элемент или нет
             if (td.getSelectedRow() != -1) {//getSelectedRow() показывает, какую строку выбрал пользователь и возвращает её номер (если -1, то значит пользователь не выбрал никакую строку)
@@ -69,7 +70,6 @@ abstract public class RightPanel extends AbstractPanel {//абстрактный
 
     @Override
     protected final void init() {
-
         enableEditDelete();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         JLabel header = new JLabel(Text.get(title));

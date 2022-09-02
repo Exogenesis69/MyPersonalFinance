@@ -23,6 +23,10 @@ public class MenuSettingsHandler extends Handler{//класс, реализую�
             }
             case HandlerCode.MENU_SETTINGS_LANGUAGE_ENGLISH: {// действия при варианте нажатия на кнопку "Английский"
                 Settings.setLanguage("en");
+                break;
+            }
+            case HandlerCode.MENU_SETTINGS_LANGUAGE_ITALIAN: {// действия при варианте нажатия на кнопку "Итальянский"
+                Settings.setLanguage("it");
             }
         }
         Text.init();

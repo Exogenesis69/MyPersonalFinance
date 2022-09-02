@@ -72,6 +72,7 @@ final public class Style { //Final класс: не будем создават�
     public static final ImageIcon ICON_MENU_SETTINGS_LANGUAGE = new ImageIcon("images/menu_settings_language.png");
     public static final ImageIcon ICON_MENU_SETTINGS_LANGUAGE_RUSSIAN = new ImageIcon("images/menu_settings_language_russian.png");
     public static final ImageIcon ICON_MENU_SETTINGS_LANGUAGE_ENGLISH = new ImageIcon("images/menu_settings_language_english.png");
+    public static final ImageIcon ICON_MENU_SETTINGS_LANGUAGE_ITALIAN = new ImageIcon("images/menu_settings_language_italian.png");
 
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_view_help.png");
 

@@ -97,6 +97,7 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_SETTINGS_LANGUAGE", "Язык");
             data.put("MENU_SETTINGS_LANGUAGE_RUSSIAN", "Русский");
             data.put("MENU_SETTINGS_LANGUAGE_ENGLISH", "Английский");
+            data.put("MENU_SETTINGS_LANGUAGE_ITALIAN", "Итальянский");
 
             data.put("MENU_HELP_ABOUT", "О программе");
 
@@ -252,6 +253,7 @@ final public class Text { // класс с текстовыми констант
             data.put("MENU_SETTINGS_LANGUAGE", "Language");
             data.put("MENU_SETTINGS_LANGUAGE_RUSSIAN", "Russian");
             data.put("MENU_SETTINGS_LANGUAGE_ENGLISH", "English");
+            data.put("MENU_SETTINGS_LANGUAGE_ITALIAN", "Italian");
 
             data.put("MENU_HELP_ABOUT", "About");
 
@@ -338,7 +340,162 @@ final public class Text { // класс с текстовыми констант
             data.put("DIALOG_ABOUT_TITLE", "About");
             data.put("ABOUT", "<body style='font-size: 120%; text-align: center; width: 350px;'>"
                     + "<h1>Personal finance<h1><p><img src='file:images/main.png' /></p>"
-                    + "<p>This program created by Dmitry Sukhorykov "
+                    + "<p>This program created by Dmitry Sukhorukov "
+                    + "<br /><a style='font-weight: bold;' href='https://vk.com/exogen69'>https://vk.com/exogen69</a></p>"
+                    + "<p>Copyright " + Calendar.getInstance().get(Calendar.YEAR) + "</p></body");
+        }
+        else if (Settings.getLanguage().equals("it")) {
+            data.put("PROGRAM_NAME", "Finanza personale");
+            data.put("MENU_FILE", "File");
+            data.put("MENU_EDIT", "Modificare");
+            data.put("MENU_VIEW", "Visualizzazione");
+            data.put("MENU_SETTINGS", "Impostazioni");
+            data.put("MENU_HELP", "Aiuto");
+
+            data.put("JANUARY", "Gennaio");
+            data.put("FEBRUARY", "Febbraio");
+            data.put("MARCH", "Marzo");
+            data.put("APRIL", "April");
+            data.put("MAY", "Maggio");
+            data.put("JUNE", "Giugno");
+            data.put("JULY", "Luglio");
+            data.put("AUGUST", "Agosto");
+            data.put("SEPTEMBER", "Settembre");
+            data.put("OCTOBER", "Ottobre");
+            data.put("NOVEMBER", "Novembre");
+            data.put("DECEMBER", "Dicembre");
+
+            data.put("ERROR", "Errore");
+            data.put("ERROR_TITLE_EMPTY", "Non hai inserito un nome!");
+            data.put("ERROR_IS_EXISTS", "Questa voce esiste già!");
+            data.put("ERROR_DATE_FORMAT", "Formato data non valido!");
+            data.put("ERROR_CODE_EMPTY", "Non hai fornito un codice!");
+            data.put("ERROR_CURRENCY_EMPTY", "Non hai selezionato una valuta!");
+            data.put("ERROR_ARTICLE_EMPTY", "Non hai selezionato un articolo!");
+            data.put("ERROR_ACCOUNT_EMPTY", "You didn't select an account!");
+            data.put("ERROR_RATE_INCORRECT", "Non hai selezionato un account!");
+            data.put("ERROR_AMOUNT_FORMAT", "Formato importo errato!");
+            data.put("ERROR_NO_BASE_CURRENCY", "Richiede valuta di base! Prima imposta questo parametro in un'altra valuta, poi verrà rimosso automaticamente in questa.");
+            data.put("ERROR_UPDATE_CURRENCIES", "Errore durante l'aggiornamento delle valute!");
+
+            data.put("CONFIRM_EXIT_TEXT", "Sei sicuro di voler uscire? Tutti i dati non salvati andranno persi!");
+            data.put("CONFIRM_EXIT_TITLE", "Conferma di uscita");
+            data.put("CONFIRM_DELETE_TITLE", "Conferma cancellazione");
+            data.put("CONFIRM_DELETE_TEXT", "Sei sicuro di voler eliminare questa voce?");
+
+            data.put("YES", "Sì");
+            data.put("NO", "No");
+
+            data.put("MENU_FILE_NEW", "Nuovo");
+            data.put("MENU_FILE_OPEN", "Aprire");
+            data.put("MENU_FILE_SAVE", "Salvare");
+            data.put("MENU_FILE_UPDATE_CURRENCIES", "Aggiorna valute");
+            data.put("MENU_FILE_EXIT", "Uscita");
+
+            data.put("MENU_EDIT_ADD", "Aggiungere");
+            data.put("MENU_EDIT_EDIT", "Modificare");
+            data.put("MENU_EDIT_DELETE", "Elimina");
+
+            data.put("MENU_VIEW_OVERVIEW", "Panoramica");
+            data.put("MENU_VIEW_ACCOUNTS", "Conti");
+            data.put("MENU_VIEW_ARTICLES", "Articoli");
+            data.put("MENU_VIEW_TRANSACTIONS", "Transazioni");
+            data.put("MENU_VIEW_TRANSFERS", "Trasferimenti");
+            data.put("MENU_VIEW_CURRENCIES", "Valute");
+            data.put("MENU_VIEW_STATISTICS", "Statistiche");
+
+            data.put("MENU_SETTINGS_LANGUAGE", "Lingua");
+            data.put("MENU_SETTINGS_LANGUAGE_RUSSIAN", "Russo");
+            data.put("MENU_SETTINGS_LANGUAGE_ENGLISH", "Inglese");
+            data.put("MENU_SETTINGS_LANGUAGE_ITALIAN", "Italiano");
+
+            data.put("MENU_HELP_ABOUT", "Sul programma");
+
+            data.put("TOOLBAR_OVERVIEW", "Panoramica");
+            data.put("TOOLBAR_ACCOUNTS", "Conti");
+            data.put("TOOLBAR_ARTICLES", "Articoli");
+            data.put("TOOLBAR_TRANSACTIONS", "Transazioni");
+            data.put("TOOLBAR_TRANSFERS", "Trasferimenti");
+            data.put("TOOLBAR_CURRENCIES", "Valute");
+            data.put("TOOLBAR_STATISTICS", "Statistiche");
+
+            data.put("ADD", "Aggiungere");
+            data.put("EDIT", "Modificare");
+            data.put("DELETE", "Elimina");
+            data.put("CANCEL", "Annulla");
+
+            data.put("TODAY", "In data odierna");
+
+            data.put("LABEL_TITLE", "Titolo:");
+            data.put("LABEL_CURRENCY", "Moneta:");
+            data.put("LABEL_START_AMOUNT", "Importo iniziale:");
+            data.put("LABEL_DATE", "Data:");
+            data.put("LABEL_ACCOUNT", "Account:");
+            data.put("LABEL_ARTICLE", "Articolo:");
+            data.put("LABEL_AMOUNT", "Quantità:");
+            data.put("LABEL_NOTICE", "Avviso:");
+            data.put("LABEL_FROM_ACCOUNT", "Da:");
+            data.put("LABEL_TO_ACCOUNT", "Per:");
+            data.put("LABEL_FROM_AMOUNT", "Ritirato:");
+            data.put("LABEL_TO_AMOUNT", "Accreditato:");
+            data.put("LABEL_CODE", "Codice:");
+            data.put("LABEL_RATE", "Valutare:");
+            data.put("LABEL_ON", "Abilitare:");
+            data.put("LABEL_BASE", "Di base:");
+
+            data.put("BALANCE_CURRENCIES", "Saldo per valute");
+            data.put("BALANCE", "Saldo totale");
+
+            data.put("FC_HOME", "Casa");
+            data.put("FC_OPEN", "Aprire");
+            data.put("FC_SAVE", "Salva");
+            data.put("FC_CANCEL", "Annulla");
+            data.put("FC_LOOK", "Cartella:");
+            data.put("FC_NAME_FILE", "Nome del file:");
+            data.put("FC_TYPE_FILE", "Tipo di file:");
+            data.put("FC_UP", "Su");
+            data.put("FC_NEW_DIRECTORY", "Nuova directory");
+            data.put("FC_LIST", "Elenco");
+            data.put("FC_TABLE", "Tavolo");
+            data.put("FC_NAME", "Nome");
+            data.put("FC_TYPE", "Tipo");
+            data.put("FC_SIZE", "Dimensione");
+            data.put("FC_DATE", "Dati");
+            data.put("FC_ATTR", "Attributi");
+            data.put("FC_ALL_FILTER", "Tutti i files");
+
+            data.put("LAST_TRANSACTIONS", "Ultime transazioni");
+            data.put("ACCOUNTS", "Conti");
+            data.put("ARTICLES", "Articoli");
+            data.put("TRANSACTIONS", "Transazioni");
+            data.put("TRANSFERS", "Trasferimenti");
+            data.put("CURRENCIES", "Valute");
+            data.put("STATISTICS", "Statistiche");
+
+            data.put("TITLE", "Titolo");
+            data.put("DATE", "Data");
+            data.put("ACCOUNT", "Account");
+            data.put("ARTICLE", "Articolo");
+            data.put("AMOUNT", "Quantità");
+            data.put("NOTICE", "Avviso");
+            data.put("FROM_ACCOUNT", "Da");
+            data.put("TO_ACCOUNT", "Per");
+            data.put("FROM_AMOUNT", "Ritirato");
+            data.put("TO_AMOUNT", "Accreditato");
+            data.put("CODE", "Codice");
+            data.put("RATE", "Valutare");
+            data.put("ON", "Abilitare");
+            data.put("BASE", "Di base");
+
+            data.put("CHART_INCOME", "Redditi per articoli");
+            data.put("CHART_EXP", "Spese per articoli");
+            data.put("CHART_NO_DATA", "Nessun dato per il periodo selezionato!");
+
+            data.put("DIALOG_ABOUT_TITLE", "Sul programma");
+
+            data.put("ABOUT", "<body style='font-size: 120%; text-align: center; width: 350px;'>"
+                    + "<h1>Finanza personale<h1><p><img src='file:images/main.png' /></p>"
+                    + "<p>Questo programma creato da Dmitry Sukhorukov "
                     + "<br /><a style='font-weight: bold;' href='https://vk.com/exogen69'>https://vk.com/exogen69</a></p>"
                     + "<p>Copyright " + Calendar.getInstance().get(Calendar.YEAR) + "</p></body");
         }

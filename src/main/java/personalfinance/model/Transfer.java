@@ -20,8 +20,8 @@ public class Transfer extends Common  { //класс для создания о�
     public Transfer(Account fromAccount, Account toAccount, double fromAmount, double toAmount, String notice, Date date) throws ModelException {
         if (fromAccount == null) throw new ModelException(ModelException.ACCOUNT_EMPTY);
         if (toAccount == null) throw new ModelException(ModelException.ACCOUNT_EMPTY);
-        if (date == null) throw new ModelException(ModelException.DATE_FORMAT);
         if (fromAmount < 0 || toAmount < 0) throw new ModelException(ModelException.AMOUNT_FORMAT);
+        if (date == null) throw new ModelException(ModelException.DATE_FORMAT);
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.fromAmount = fromAmount;

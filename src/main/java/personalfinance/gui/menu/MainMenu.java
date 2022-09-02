@@ -58,7 +58,7 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         addMenuItem(edit, editHandler, Text.get("MENU_EDIT_ADD"), Style.ICON_MENU_EDIT_ADD, HandlerCode.MENU_EDIT_ADD);
         menuEdit = addMenuItem(edit, editHandler, Text.get("MENU_EDIT_EDIT"), Style.ICON_MENU_EDIT_EDIT, HandlerCode.MENU_EDIT_EDIT);
         menuDelete = addMenuItem(edit, editHandler, Text.get("MENU_EDIT_DELETE"), Style.ICON_MENU_EDIT_DELETE, HandlerCode.MENU_EDIT_DELETE);
-        menuEdit.setEnabled(false);
+        menuEdit.setEnabled(false); 
         menuDelete.setEnabled(false);
 
         addMenuItem(view, viewHandler, Text.get("MENU_VIEW_OVERVIEW"), Style.ICON_MENU_VIEW_OVERVIEW, HandlerCode.MENU_VIEW_OVERVIEW);
@@ -78,22 +78,30 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete { //
         ButtonGroup group = new ButtonGroup();
         JRadioButtonMenuItem menuRussian = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_RUSSIAN"));
         JRadioButtonMenuItem menuEnglish = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_ENGLISH"));
+        JRadioButtonMenuItem menuItalian = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_ITALIAN"));
         group.add(menuRussian);//добавляем кнопки в одну группу
         group.add(menuEnglish);
+        group.add(menuItalian);
 
         menuRussian.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE_RUSSIAN);
         menuEnglish.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE_ENGLISH);
+        menuItalian.setIcon(Style.ICON_MENU_SETTINGS_LANGUAGE_ITALIAN);
+
         menuRussian.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_RUSSIAN);
         menuEnglish.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_ENGLISH);
+        menuItalian.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_ITALIAN);
 
         menuRussian.addActionListener(settingsHandler);
         menuEnglish.addActionListener(settingsHandler);
+        menuItalian.addActionListener(settingsHandler);
 
         if (Settings.getLanguage().equals("ru")) menuRussian.setSelected(true);
         else if (Settings.getLanguage().equals("en")) menuEnglish.setSelected(true);
+        else if (Settings.getLanguage().equals("it")) menuItalian.setSelected(true);
 
         language.add(menuRussian);
         language.add(menuEnglish);
+        language.add(menuItalian);
     }
 
     private JMenuItem addMenuItem(JMenu menu, Handler listener, String title, ImageIcon icon, String action, int key) { //вспомогательный метод, помогающий уменьшить кол-во кода для пунктов, где есть горячие клавиши

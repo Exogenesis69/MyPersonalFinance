@@ -30,7 +30,7 @@ final public class Settings { //final класс, где содержатся н
     public static final String[] CURRENCIES_CODE = new String[]{"RUB", "USD", "EUR", "BYN", "UAH"}; // код валют
 
     private static final File FILE_SETTINGS = new File("saves/settings.ini"); // путь, куда сохраняется файл настройки
-    private static File FILE_SAVE = new File("saves/default.sukhd"); //путь к последнему открытому файлу. Если нету, то ставим default.myrys
+    private static File FILE_SAVE = new File("saves/default.sukhd"); //путь к последнему открытому файлу. Если нету, то ставим default.sukhd
 
     private static String LANGUAGE = "ru";//Настройка языка(по умолчанию-русский)
 
@@ -69,7 +69,8 @@ final public class Settings { //final класс, где содержатся н
 
     private static void setLocale() { //устанавливаем язык
         if (LANGUAGE.equals("ru")) Locale.setDefault(new Locale("ru"));
-        else Locale.setDefault(new Locale("en"));
+        else if (LANGUAGE.equals("en")) Locale.setDefault(new Locale("en"));
+        else Locale.setDefault(new Locale("it"));
     }
 
     private static void save() { //сохраняет данные в ini.file с новыми настройками
